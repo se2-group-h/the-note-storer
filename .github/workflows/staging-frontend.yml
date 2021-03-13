@@ -1,0 +1,40 @@
+name: Staging frontend
+
+on:
+  push:
+    branches:
+      - staging/frontend
+  pull_request:
+    branches:
+      - staging/frontend
+        
+
+defaults:
+  run:
+    working-directory: frontend
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: yarn test
+      
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_FRONTEND_STAGING_API_KEY}}
+          heroku_app_name: "the-note-storer-frontent-stage" #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_FRONTEND_STAGING_EMAIL}}
+          usedocker: true

@@ -4,11 +4,7 @@ on:
   push:
     branches:
       - staging/frontend
-  pull_request:
-    branches:
-      - staging/frontend
         
-
 defaults:
   run:
     working-directory: frontend

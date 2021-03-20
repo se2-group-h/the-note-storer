@@ -3,24 +3,20 @@ name: Deploy frontend for staging to Heroku.
 on:
   push:
     branches: [stage/frontend]
-
-defaults:
-  run:
-    working-directory: frontend
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-        uses: gonuit/heroku-docker-deploy@v1.3.2 # GitHub action name (leave it as it is).
+      - name: Build, Push and Release a Docker container to Heroku. 
+        uses: gonuit/heroku-docker-deploy@v1.3.2 
         with:
           email: ${{ secrets.HEROKU_FRONTEND_STAGING_EMAIL }}
           heroku_api_key: ${{ secrets.HEROKU_FRONTEND_STAGING_API_KEY }}
           heroku_app_name: tns-frontent-staging
-          dockerfile_directory: ./
+          dockerfile_directory: ./frontend
           dockerfile_name: Dockerfile.staging
           docker_options: "--no-cache"
           process_type: web

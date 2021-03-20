@@ -28,7 +28,7 @@ jobs:
 #       - run: yarn install
 #       - run: yarn test
       
-  build:
+  deploy-staging:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

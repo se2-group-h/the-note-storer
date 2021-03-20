@@ -3,10 +3,10 @@ name: Staging frontend
 on:
   push:
     branches:
-      - staging/frontend
+      - stage/frontend
   pull_request:
     branches:
-      - staging/frontend
+      - stage/frontend
         
 
 defaults:

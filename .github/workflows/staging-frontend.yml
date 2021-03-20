@@ -3,7 +3,7 @@ name: Staging frontend
 on:
   push:
     branches:
-      - staging/frontend
+      - stage/frontend
         
 defaults:
   run:

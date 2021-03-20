@@ -5,8 +5,6 @@ COPY package.json .
 RUN yarn install
 COPY . .
 RUN yarn build
-EXPOSE 3000
-CMD ["yarn", "run", "start"]
 # setup nginx
 FROM nginx:alpine
 LABEL maintainer="SE2 Group H PW MiNI"

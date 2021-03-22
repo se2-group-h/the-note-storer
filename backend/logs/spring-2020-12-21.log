@@ -1,0 +1,238 @@
+2020-12-21 21:18:01 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:18:01 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:18:03 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:18:03 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 71 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:18:03 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:18:04 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2080 ms
+2020-12-21 21:18:05 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:18:06 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:18:06 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:18:06 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:18:06 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:18:07 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:19:04 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:19:04 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 11 ms
+2020-12-21 21:23:09 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:23:09 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:23:10 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:23:11 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:23:11 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:23:11 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1691 ms
+2020-12-21 21:23:12 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:23:13 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:23:13 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:23:13 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:23:13 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:23:13 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:23:16 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:23:16 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2020-12-21 21:25:44 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:25:44 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:25:45 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:25:45 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:25:45 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:25:45 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1618 ms
+2020-12-21 21:25:47 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:25:47 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:25:47 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:25:48 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:25:48 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:25:48 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:25:48 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:25:48 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 2 ms
+2020-12-21 21:26:50 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:26:50 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:26:51 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:26:52 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:26:52 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:26:52 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1601 ms
+2020-12-21 21:26:53 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:26:54 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:26:54 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:26:54 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:26:54 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:26:55 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:27:03 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:27:03 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2020-12-21 21:31:56 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:31:56 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:31:58 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:31:58 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:31:58 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:31:58 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2455 ms
+2020-12-21 21:32:00 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:32:00 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:32:00 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:32:01 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:32:01 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:32:01 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:32:09 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:32:09 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 2 ms
+2020-12-21 21:37:05 [WARN ] [http-nio-8080-exec-5] efaultHandlerExceptionResolver: Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.bookly.backend.models.ItemType` from String "Rooms": not one of the values accepted for Enum class: [Parking, Room, Car]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.bookly.backend.models.ItemType` from String "Rooms": not one of the values accepted for Enum class: [Parking, Room, Car]
+ at [Source: (PushbackInputStream); line: 19, column: 17] (through reference chain: com.bookly.backend.models.Booking["itemType"])]
+2020-12-21 21:41:39 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:41:39 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:41:41 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:41:41 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:41:41 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:41:42 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2706 ms
+2020-12-21 21:41:43 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:41:44 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:41:44 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:41:44 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:41:44 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:41:45 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:41:45 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:41:45 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2020-12-21 21:47:24 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:47:24 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:47:25 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:47:25 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:47:26 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:47:26 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1683 ms
+2020-12-21 21:47:27 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:47:28 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:47:28 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:47:28 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:47:28 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:47:29 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:47:29 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:47:29 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 3 ms
+2020-12-21 21:48:23 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:48:23 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:48:24 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:48:24 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:48:25 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:48:25 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2150 ms
+2020-12-21 21:48:26 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:48:27 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:48:27 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:48:27 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:48:27 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:48:27 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:49:14 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:49:14 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:49:15 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:49:15 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 44 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:49:16 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:49:16 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1655 ms
+2020-12-21 21:49:17 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:49:18 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:49:18 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:49:18 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:49:18 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:49:18 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:49:52 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:49:52 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:49:53 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:49:53 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:49:53 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:49:54 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1683 ms
+2020-12-21 21:49:55 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:49:55 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:49:55 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:49:56 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:49:56 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:49:56 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:50:04 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:50:04 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 3 ms
+2020-12-21 21:55:15 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 21:55:15 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 21:55:16 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 21:55:16 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+2020-12-21 21:55:17 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 21:55:17 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1695 ms
+2020-12-21 21:55:18 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 21:55:19 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 21:55:19 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 21:55:19 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 21:55:19 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 21:55:20 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 21:55:23 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 21:55:23 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 10 ms
+2020-12-21 22:03:09 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 22:03:09 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 22:03:10 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 22:03:10 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 93 ms. Found 3 JPA repository interfaces.
+2020-12-21 22:03:10 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 22:03:10 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1831 ms
+2020-12-21 22:03:12 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 22:03:12 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 22:03:12 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 22:03:12 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 22:03:13 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 22:03:13 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 22:03:28 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 22:03:28 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2020-12-21 22:08:09 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 22:08:09 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 22:08:10 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 22:08:10 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2020-12-21 22:08:10 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 22:08:10 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1503 ms
+2020-12-21 22:08:11 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 22:08:12 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 22:08:12 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 22:08:12 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 22:08:12 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 22:08:13 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 22:08:17 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 22:08:17 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 3 ms
+2020-12-21 22:12:48 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 22:12:48 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 22:12:49 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 22:12:49 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2020-12-21 22:12:49 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 22:12:49 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1509 ms
+2020-12-21 22:12:51 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 22:12:51 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 22:12:51 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 22:12:51 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 22:12:51 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 22:12:52 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 22:12:57 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 22:12:57 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2020-12-21 22:13:17 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 22:13:17 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 22:13:17 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 22:13:17 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2020-12-21 22:13:18 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 22:13:18 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1360 ms
+2020-12-21 22:13:19 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 22:13:19 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 22:13:19 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 22:13:20 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 22:13:20 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 22:13:20 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 22:13:23 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 22:13:23 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 1 ms
+2020-12-21 22:23:10 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 22:23:10 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 22:23:11 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 22:23:11 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 39 ms. Found 3 JPA repository interfaces.
+2020-12-21 22:23:12 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 22:23:12 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1426 ms
+2020-12-21 22:23:13 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 22:23:13 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 22:23:14 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 22:23:14 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 22:23:14 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 22:23:14 [INFO ] [restartedMain] .support.RouterFunctionMapping: Mapped (GET && /swagger) -> BackendApplication$$Lambda$1078/0x0000000800807c40@670be345
+2020-12-21 22:23:14 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 22:23:19 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 22:23:19 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 2 ms
+2020-12-21 22:23:48 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 22:23:48 [INFO ] [restartedMain] sPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 22:23:49 [INFO ] [restartedMain] epositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-21 22:23:49 [INFO ] [restartedMain] epositoryConfigurationDelegate: Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2020-12-21 22:23:50 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2020-12-21 22:23:50 [INFO ] [restartedMain] letWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1525 ms
+2020-12-21 22:23:51 [INFO ] [restartedMain] tainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 22:23:51 [INFO ] [restartedMain] igure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2020-12-21 22:23:52 [WARN ] [restartedMain] figuration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-21 22:23:52 [INFO ] [restartedMain] oint.web.EndpointLinksResolver: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-21 22:23:52 [INFO ] [restartedMain] current.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 22:23:52 [INFO ] [restartedMain] .support.RouterFunctionMapping: Mapped (GET && /) -> BackendApplication$$Lambda$1078/0x0000000800807c40@714ac441
+2020-12-21 22:23:52 [INFO ] [restartedMain] mbedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-21 22:23:53 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2020-12-21 22:23:53 [INFO ] [http-nio-8080-exec-1] .web.servlet.DispatcherServlet: Completed initialization in 2 ms

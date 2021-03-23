@@ -29,7 +29,10 @@ jobs:
 
           echo "Creating Source Bundle"
           cat ./frontend/Dockerfile.staging >> ./frontend/Dockerfile
-          zip -r ${{env.APP_NAME}}.zip ./frontend
+          cd ./frontend
+          zip -r ../${{env.APP_NAME}}.zip .
+          cd ..
+          
           S3_KEY="$AWS_VERSION_LABEL.zip"
 
           echo "Uploading Source Bundle to S3"

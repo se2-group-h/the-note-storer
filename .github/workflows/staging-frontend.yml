@@ -66,7 +66,7 @@ jobs:
           eb --version
 
           echo "Deploy init"
-          ls ~/.ssh/
+          eb ssh
           eb init -i ${{env.APP_NAME}} -p ${{env.AWS_PLATFORM}} -k ${{secrets.AWS_ID}} --region ${{env.AWS_REGION}}
           eb deploy ${{env.APP_NAME}} --version ${AWS_VERSION_LABEL}
           echo "Deploy finished"

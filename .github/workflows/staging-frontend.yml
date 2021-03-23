@@ -46,10 +46,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.6 (needed for eb cli)
+      - name: Set up Python 3.9.2 (needed for eb cli)
         uses: actions/setup-python@v1
         with:
-          python-version: "3.6"
+          python-version: "3.9.2"
       - name: Configure AWS credentials 
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -67,6 +67,6 @@ jobs:
 
           echo "Deploy init"
           eb ssh
-          eb init -i ${{env.APP_NAME}} -p ${{env.AWS_PLATFORM}} -k ${{secrets.AWS_ID}} --region ${{env.AWS_REGION}}
+          eb init -i ${{env.APP_NAME}} -p ${{env.AWS_PLATFORM}} --region ${{env.AWS_REGION}}
           eb deploy ${{env.APP_NAME}} --version ${AWS_VERSION_LABEL}
           echo "Deploy finished"

@@ -1,0 +1,16 @@
+# build react app
+FROM node:alpine AS builder
+WORKDIR /app
+COPY package.json .
+RUN yarn install
+COPY . .
+RUN yarn build
+# setup nginx
+FROM nginx:alpine
+LABEL maintainer="SE2 Group H PW MiNI"
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=builder /app/build .
+EXPOSE 80
+EXPOSE $PORT
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

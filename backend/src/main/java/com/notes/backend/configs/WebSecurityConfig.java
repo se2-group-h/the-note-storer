@@ -58,7 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/login").permitAll()
+                .antMatchers("/", "/login", "/h2-console", "/h2-console/**").permitAll()
                 .antMatchers("/resources/**", "/resources/static/**", "/resources/static/img/**", "/resources/static/static/css/*.css", "/resources/static/static/js/*.js").permitAll()
                 .antMatchers("/img/**", "/static/**", "/static/img/**", "/static/static/css/*.css", "/static/static/js/*.js").permitAll()
                 .antMatchers("/*.js").permitAll()
@@ -72,6 +72,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/login/").permitAll()
                 .anyRequest().authenticated();
 
+        http.headers().frameOptions().sameOrigin();
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }

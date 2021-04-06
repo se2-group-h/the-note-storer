@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TheNoteStorer.Interfaces;
+using TheNoteStorer.Services;
 using Xamarin.Forms;
 
 namespace TheNoteStorer
@@ -12,6 +9,7 @@ namespace TheNoteStorer
         public MainPage()
         {
             InitializeComponent();
+            Content = new LoginView();
         }
     }
 }

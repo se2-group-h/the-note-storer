@@ -27,8 +27,8 @@ jobs:
       - run: |
           AWS_VERSION_LABEL=${{env.APP_NAME}}-${{env.PIPELINE_ID}}
           echo "Creating Source Bundle"
-          cat ./frontend/Dockerfile.staging >> ./frontend/Dockerfile
-          cd ./frontend
+          cat ./backend/Dockerfile.staging >> ./frontend/Dockerfile
+          cd ./backend
           zip -r ../${{env.APP_NAME}}.zip .
           cd ..
           

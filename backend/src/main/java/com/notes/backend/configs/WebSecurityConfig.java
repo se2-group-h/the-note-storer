@@ -65,7 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/login", "/h2-console", "/h2-console/**", "/swagger-ui/**").permitAll()
+                .antMatchers("/", "/h2-console", "/h2-console/**", "/swagger-ui/**").permitAll()
                 .antMatchers(AUTH_WHITELIST).permitAll()
                 .antMatchers("/resources/**", "/resources/static/**", "/resources/static/img/**", "/resources/static/static/css/*.css", "/resources/static/static/js/*.js").permitAll()
                 .antMatchers("/img/**", "/static/**", "/static/img/**", "/static/static/css/*.css", "/static/static/js/*.js").permitAll()
@@ -77,8 +77,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/*.png").permitAll()
                 .antMatchers("/*.svg").permitAll()
                 .antMatchers("/*.ttf").permitAll()
-                .antMatchers("/api/login/").permitAll()
-                .antMatchers("/api/signup/").permitAll()
+                .antMatchers("/api/login", "/api/login/").permitAll()
+                .antMatchers("/api/signup", "/api/signup/").permitAll()
                 .anyRequest().authenticated();
 
         http.headers().frameOptions().sameOrigin();

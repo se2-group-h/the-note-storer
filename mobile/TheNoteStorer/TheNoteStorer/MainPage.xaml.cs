@@ -6,10 +6,17 @@ namespace TheNoteStorer
 {
     public partial class MainPage : ContentPage
     {
+        public bool IsClickable { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
-            Content = new LoginView();
+            Navigation.PushModalAsync(new LoginPage());
+        }
+
+        async void LogoutButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PushModalAsync(new LoginPage());
         }
     }
 }

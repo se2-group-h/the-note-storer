@@ -5,5 +5,17 @@
              x:Class="TheNoteStorer.MainPage"
              Title="Main page"
              >
-
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Button
+            BackgroundColor="LightGray"
+            TextColor="DimGray"
+            FontSize="24"
+            BorderWidth="3"
+            CornerRadius="15"
+            Text="Log out"
+            BorderColor="DimGray"
+            WidthRequest="100"
+            x:Name="LogoutButton"
+            Clicked="LogoutButton_Clicked"/>
+    </StackLayout>
 </ContentPage>

@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: 
       - master
-      - stage/frontend
+      - stage/backend
 
 defaults:
   run:
@@ -12,7 +12,7 @@ defaults:
 
 jobs:
   test:
-    Name: Backend unit tests
+    name: Backend unit tests
     runs-on: ubuntu-latest
 
     steps:

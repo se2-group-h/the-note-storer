@@ -2,6 +2,7 @@ package com.notes.backend.controllers;
 
 import com.notes.backend.entities.User;
 import com.notes.backend.services.RegistrationService;
+import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(tags = "Registration")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/signup")

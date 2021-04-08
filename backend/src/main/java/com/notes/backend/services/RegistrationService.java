@@ -4,6 +4,7 @@ import com.notes.backend.chains.Validator;
 import com.notes.backend.dao.UserRepository;
 import com.notes.backend.entities.User;
 import lombok.AllArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,8 @@ public class RegistrationService {
 
     public User saveNewUser(User newUser) {
         newUser.setUserId(0);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(5);
+        newUser.setPassword(encoder.encode(newUser.getPassword()));
         return userRepository.save(newUser);
     }
 

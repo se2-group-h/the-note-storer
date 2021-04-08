@@ -4,7 +4,6 @@ import com.notes.backend.entities.AuthorizedUser;
 import com.notes.backend.entities.LoginForm;
 import com.notes.backend.services.AuthService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

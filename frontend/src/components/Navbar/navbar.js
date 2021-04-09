@@ -15,7 +15,7 @@ const Navbar = () => {
                 </ul>
             </nav>
             <a class="cta" href="/#"><NavLink exact to="/register" activeClassName="selectedlink"><button id="register">Register</button></NavLink></a>
-            <a class="cta" href="/#"><button id="sign-in">Sign-In</button></a>
+            <a class="cta" href="/#"><NavLink exact to="/signin" activeClassName="selectedlink"><button id="sign-in">Sign-In</button></NavLink></a>
         </header> 
         </div>
     )

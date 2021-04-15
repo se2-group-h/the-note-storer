@@ -2,6 +2,7 @@ package com.notes.backend.controllers;
 
 import com.notes.backend.entities.AuthorizedUser;
 import com.notes.backend.entities.LoginForm;
+import com.notes.backend.exceptions.BadCredentialsException;
 import com.notes.backend.services.AuthService;
 import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
@@ -26,7 +27,7 @@ public class AuthController {
         try {
             AuthorizedUser authentication = authService.trySignIn(credentials);
             return new ResponseEntity<>(authentication, HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (BadCredentialsException e) {
             return new ResponseEntity<>("Bad credentials", HttpStatus.UNAUTHORIZED);
         }
     }

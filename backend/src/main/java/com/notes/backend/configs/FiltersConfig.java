@@ -12,30 +12,30 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.Arrays;
 import java.util.Optional;
 
-//@Configuration
-//public class FiltersConfig {
-//
-//    @Value(value = "${cors.urls}")
-//    private String corsUrls;
-//
-//    @Bean
-//    public FilterRegistrationBean<CorsFilter> corsFilter() {
-//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        final CorsConfiguration config = new CorsConfiguration();
-//        config.setAllowCredentials(true);
-//        config.setAllowedOrigins(Arrays.asList(getCorsUrls()));
-//        config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Security-Token"));
-//        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-//        source.registerCorsConfiguration("/v1/**", config);
-//        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>(new CorsFilter(source));
-//        registration.setOrder(1);
-//        return registration;
-//    }
-//
-//    private String[] getCorsUrls() {
-//        return Optional.ofNullable(corsUrls)
-//                .map(value -> value.split(","))
-//                .orElseGet(() -> new String[0]);
-//    }
-//
-//}
+@Configuration
+public class FiltersConfig {
+
+    @Value(value = "${cors.urls}")
+    private String corsUrls;
+
+    @Bean
+    public FilterRegistrationBean<CorsFilter> corsFilter() {
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        final CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.setAllowedOrigins(Arrays.asList(getCorsUrls()));
+        config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Security-Token"));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+        source.registerCorsConfiguration("/v1/**", config);
+        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>(new CorsFilter(source));
+        registration.setOrder(1);
+        return registration;
+    }
+
+    private String[] getCorsUrls() {
+        return Optional.ofNullable(corsUrls)
+                .map(value -> value.split(","))
+                .orElseGet(() -> new String[0]);
+    }
+
+}

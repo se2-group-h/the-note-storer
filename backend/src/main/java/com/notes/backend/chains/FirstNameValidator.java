@@ -8,6 +8,9 @@ public class FirstNameValidator implements Validator {
 
     @Override
     public boolean validate(User user) {
+        if (user.getFirstName() == null) {
+            return false;
+        }
         return !user.getFirstName().trim().isEmpty();
     }
 }

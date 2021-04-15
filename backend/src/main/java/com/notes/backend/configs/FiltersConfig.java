@@ -26,9 +26,7 @@ public class FiltersConfig {
         config.setAllowedOrigins(Arrays.asList(getCorsUrls()));
         config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Security-Token"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-        source.registerCorsConfiguration("/v1/**", config);
-//        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>(new CorsFilter(source));
-//        registration.setOrder(1);
+        source.registerCorsConfiguration("/api/**", config);
         return new CorsFilter(source);
     }
 

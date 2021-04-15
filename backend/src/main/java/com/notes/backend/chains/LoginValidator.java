@@ -13,6 +13,9 @@ public class LoginValidator implements Validator {
 
     @Override
     public boolean validate(User user) {
+        if (user.getLogin() == null || user.getLogin().trim().isEmpty()) {
+            return false;
+        }
         return !userRepository.existsByLogin(user.getLogin());
     }
 }

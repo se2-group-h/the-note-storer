@@ -34,7 +34,6 @@ class RegistrationServiceTest {
         user.setLogin("Papich");
         user.setPassword("12345");
         user.setEmail("spitefuldick@gmail.com");
-        assertFalse(userRepository.existsByLogin(user.getLogin()));
         registrationService.saveNewUser(user);
         assertTrue(userRepository.existsByLogin(user.getLogin()));
     }
@@ -42,6 +41,11 @@ class RegistrationServiceTest {
     @Test
     void validateCorrectUser() {
         assertTrue(registrationService.validateUser(testUser));
+    }
+
+    @Test
+    void saveNullUser() {
+        assertThrows(NullPointerException.class, () -> registrationService.saveNewUser(null));
     }
 
     @Test

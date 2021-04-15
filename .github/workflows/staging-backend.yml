@@ -6,7 +6,7 @@ on:
       - stage/backend
 
 env:
-  APP_NAME: tns-back-staging
+  APP_NAME: tns-staging-back
   S3_BUCKET: tns-backend-staging-bucket
   AWS_REGION: us-east-2
   AWS_PLATFORM: Docker

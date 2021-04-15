@@ -6,7 +6,7 @@ on:
       - stage/backend
 
 env:
-  APP_NAME: tns-back-staging
+  APP_NAME: tns-staging-back
   S3_BUCKET: tns-backend-staging-bucket
   AWS_REGION: us-east-2
   AWS_PLATFORM: Docker
@@ -45,7 +45,7 @@ jobs:
       - name: Set up Python 3.9.4 (needed for eb cli)
         uses: actions/setup-python@v1
         with:
-          python-version: "3.9.2"
+          python-version: "3.9.4"
       - name: Configure AWS credentials 
         uses: aws-actions/configure-aws-credentials@v1
         with:

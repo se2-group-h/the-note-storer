@@ -19,7 +19,7 @@ public class FiltersConfig {
     private String corsUrls;
 
     @Bean
-    public FilterRegistrationBean<CorsFilter> corsFilter() {
+    public CorsFilter corsFilter() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
@@ -27,9 +27,9 @@ public class FiltersConfig {
         config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Security-Token"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         source.registerCorsConfiguration("/v1/**", config);
-        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>(new CorsFilter(source));
-        registration.setOrder(1);
-        return registration;
+//        FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>(new CorsFilter(source));
+//        registration.setOrder(1);
+        return new CorsFilter(source);
     }
 
     private String[] getCorsUrls() {

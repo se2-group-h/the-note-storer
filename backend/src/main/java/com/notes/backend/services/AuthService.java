@@ -3,6 +3,7 @@ package com.notes.backend.services;
 import com.notes.backend.entities.AuthorizedUser;
 import com.notes.backend.entities.LoginForm;
 import com.notes.backend.entities.UserDetailsImpl;
+import com.notes.backend.exceptions.BadCredentialsException;
 import com.notes.backend.utils.JwtUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,18 +19,18 @@ public class AuthService {
     private final JwtUtils jwtUtils;
     private final AuthenticationManager authenticationManager;
 
-    private Authentication setAuthentication(LoginForm credentials) throws Exception {
+    private Authentication setAuthentication(LoginForm credentials) throws BadCredentialsException {
         try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(credentials.getUsername(), credentials.getPassword()));
             SecurityContextHolder.getContext().setAuthentication(authentication);
             return authentication;
         } catch (Exception e) {
-            throw new Exception();
+            throw new BadCredentialsException();
         }
     }
 
-    public AuthorizedUser trySignIn(LoginForm credentials) throws Exception {
+    public AuthorizedUser trySignIn(LoginForm credentials) throws BadCredentialsException {
         AuthorizedUser authorizedUser = new AuthorizedUser();
         Authentication authentication = setAuthentication(credentials);
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();

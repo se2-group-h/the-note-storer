@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div>
+        <header>
+          <i
+            aria-hidden="true"
+            class="fa fa-sticky-note"
+          />
+          <h2>
+            noteit
+          </h2>
+          <nav>
+            <ul
+              class="nav__links"
+            >
+              <li>
+                <strong>
+                  About
+                </strong>
+              </li>
+              <li>
+                <strong>
+                  Contact Us
+                </strong>
+              </li>
+            </ul>
+          </nav>
+          <a
+            class="cta"
+            href="/#"
+          />
+          <a
+            href="/register"
+          >
+            <button
+              id="register"
+              title="signupbtn"
+            >
+              Register
+            </button>
+          </a>
+          <a
+            class="cta"
+            href="/#"
+          />
+          <a
+            href="/signin"
+          >
+            <button
+              id="sign-in"
+              title="signinbtn"
+            >
+              Sign-In
+            </button>
+          </a>
+        </header>
+      </div>
+      <div
+        id="body"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

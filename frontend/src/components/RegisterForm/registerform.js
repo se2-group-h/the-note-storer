@@ -31,14 +31,14 @@ const RegisterForm = () => {
                             id='email'
                             placeholder='example@ex.com'
                         />
-                        <button className='form-input-btn' type="button">
+                        <button className='form-input-btn' type="button" title="signupbutn">
                             Sign-Up
                         </button>
                     </div>
                 </form>
         </div>
         <div className='form-content-right'>
-            <img src={noteadderimg} alt="noteadderimg" width="400" height="510"></img>
+            <img src={noteadderimg} alt="noteadderimg" width="400" height="510" title="imageright"></img>
         </div>
      </div>
     </div>

@@ -12,9 +12,11 @@
     <ItemGroup>
         <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
         <PackageReference Include="Plugin.Toast" Version="2.2.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Services\" />
       <Folder Include="Interfaces\" />
+      <Folder Include="Models\" />
     </ItemGroup>
 </Project>

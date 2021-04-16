@@ -2,37 +2,41 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="TheNoteStorer.LoginPage">
+    x:Class="TheNoteStorer.RegisterPage">
     <ContentPage.Content>
          <StackLayout VerticalOptions="CenterAndExpand" Padding="25">
-             <Label Text="Welcome to The Recipy Network!"
+             <Label Text="Register new account"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     FontSize="Large"
                     Margin="10"
                     />
-            <Entry
-                Placeholder="login"
-                x:Name="LoginEntry"
+               <Entry
+                Placeholder="First name"
                 Keyboard="Plain"
-                TextChanged="LoginEntry_TextChanged"
+                x:Name="FirstNameEntry"
                 ReturnType="Next"/>
-            <Entry
-                Placeholder="password"
-                x:Name="PasswordEntry"
-                IsPassword="true"
-                TextChanged="PasswordEntry_TextChanged"
-                ReturnType="Send"/>
-            <Button
-          Text="Login"
-          x:Name="LoginButton"
-          Clicked="LoginButton_Clicked"
-                FontSize="25"
-                BackgroundColor="LightGreen"
-                TextColor="Black"
-                BorderWidth="2"
-                BorderColor="LawnGreen"
-          />
+               <Entry
+                Placeholder="Last name"
+                Keyboard="Plain"
+                x:Name="LastNameEntry"
+                ReturnType="Next"/>
+             <Entry
+                Placeholder="Email"
+                Keyboard="Email"
+                x:Name="EmailEntry"
+                ReturnType="Next"/>
+             <Entry
+                 Placeholder="Username"
+                 Keyboard="Plain"
+                 x:Name="UsernameEntry"
+                 ReturnType="Next"/>
+             <Entry
+                 Placeholder="Password"
+                 Keyboard="Plain"
+                 IsPassword="true"
+                 x:Name="PasswordEntry"
+                 ReturnType="Next"/>
              <Button
                  Text="Register"
                  x:Name="RegisterButton"

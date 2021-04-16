@@ -2,7 +2,7 @@ import React from 'react';
 import './signinform.css';
 import noteadderimg from '../../images/signinform_img.png';
 
-const signinform = () => {
+const Signinform = () => {
     return (
         <div>
         <div className="form-container">
@@ -25,18 +25,18 @@ const signinform = () => {
                             placeholder='Enter password'
                         />
                        
-                        <button className='form-input-btn' type="button">
+                        <button className='form-input-btn' type="button" title="signinbutn">
                             Sign-In
                         </button>
                     </div>
                 </form>
         </div>
         <div className='form-content-right'>
-            <img src={noteadderimg} alt="noteadderimg" width="400" height="510"></img>
+            <img src={noteadderimg} alt="noteadderimg" width="400" height="510" title="imageright"></img>
         </div>
      </div>
     </div>
     );
 }
 
-export default signinform
+export default Signinform

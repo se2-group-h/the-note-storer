@@ -10,6 +10,7 @@ namespace TheNoteStorer
     public partial class LoginPage : ContentPage
     {
         private const string LoggedInText = "Logged In";
+        private const string FailedLogIn = "Failed to Log In";
         private bool _isLoginValid;
         private bool _isPasswordValid;
 
@@ -19,31 +20,31 @@ namespace TheNoteStorer
             LoginButton.IsEnabled = false;
             LoginButton.BackgroundColor = Color.LightGray;
             LoginButton.TextColor = Color.Gray;
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         async void LoginButton_Clicked(System.Object sender, System.EventArgs e)
         {
             var loginService = new LoginService();
-
-            var loggedIn = await loginService.LoginAsync("", "");
+            
+            var username = LoginEntry.Text;
+            var password = PasswordEntry.Text;
+            var (loggedIn, token) = await loginService.LoginAsync(username, password);
 
             if (loggedIn)
             {
-                if (Device.RuntimePlatform == Device.Android)
-                {
-                    DependencyService.Get<IToastNotification>().Show(LoggedInText);
-                }
-
-                if (Device.RuntimePlatform == Device.iOS)
-                {
-                    CrossToastPopUp.Current.ShowToastMessage(LoggedInText);
-                }
+                ShowMessage(LoggedInText);
+                Application.Current.Properties["token"] = token;
 
                 await Navigation.PopModalAsync();
             }
+            else
+            {
+                ShowMessage(FailedLogIn);
+            }
         }
 
-        void PasswordEntry_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
+        void PasswordEntry_TextChanged(Object sender, TextChangedEventArgs e)
         {
             if(e.NewTextValue.Length > 5)
             {
@@ -57,7 +58,7 @@ namespace TheNoteStorer
             }
         }
 
-        void LoginEntry_TextChanged(System.Object sender, Xamarin.Forms.TextChangedEventArgs e)
+        void LoginEntry_TextChanged(Object sender, TextChangedEventArgs e)
         {
             if (!string.IsNullOrEmpty(e.NewTextValue))
             {
@@ -69,6 +70,24 @@ namespace TheNoteStorer
                     LoginButton.TextColor = Color.Black;
                 }
             }
+        }
+
+        private void ShowMessage(string message)
+        {
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                DependencyService.Get<IToastNotification>().Show(message);
+            }
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                CrossToastPopUp.Current.ShowToastMessage(message);
+            }
+        }
+
+        private void RegisterButton_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new NavigationPage(new RegisterPage()));
         }
     }
 }

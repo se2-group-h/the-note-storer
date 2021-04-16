@@ -1,4 +1,5 @@
-﻿using TheNoteStorer.Interfaces;
+﻿using System;
+using TheNoteStorer.Interfaces;
 using TheNoteStorer.Services;
 using Xamarin.Forms;
 
@@ -11,12 +12,12 @@ namespace TheNoteStorer
         public MainPage()
         {
             InitializeComponent();
-            Navigation.PushModalAsync(new LoginPage());
+            Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
 
-        async void LogoutButton_Clicked(System.Object sender, System.EventArgs e)
+        async void LogoutButton_Clicked(Object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new LoginPage());
+            await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
     }
 }

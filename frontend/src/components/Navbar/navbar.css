@@ -28,19 +28,20 @@ header {
 .nav__links {
     list-style: none;
     background-color: #383e48;
-    margin-top: 14px;
+    margin-top: 2px;
 }
 
 nav {
     background-color:#383e48;
     margin-right: auto;
-    margin-left:30px;
+    margin-left:5px;
 }
 
 .nav__links li {
     display: inline-block;
     padding: 0px 20px;
     background-color:#383e48;
+   
 }
 
 
@@ -58,9 +59,9 @@ nav {
 }
 /*909593  469ebe  */
 #sign-in {
-    padding: 9px 25px;
+    padding: 6px 12px;
     height: 48px;
-    width: 110px;
+    width: 80px;
     background-color:#2c7868;
     border: none;
     border-radius: 10px;
@@ -147,7 +148,7 @@ nav {
 }*/
 
 i.fa {
-    color: #ecbc40;
+    color: beige;
     font-size: 30px;
     margin-top: 10px;
 }
@@ -159,9 +160,9 @@ h2 {
 }
 
 #register {
-    padding: 9px 25px;
+    padding: 6px 12px;
     height: 48px;
-    width: 110px;
+    width: 80px;
     background-color:#ecbc40;
     border: none;
     border-radius: 10px;
@@ -170,7 +171,21 @@ h2 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 50;
     font-size: 15px;
+    text-align: center;
     color: black;
     text-decoration: none;
     margin-right: 5px;
+}
+
+.menulinks {
+    list-style: none;
+    background-color: #383e48;
+    margin-top: 4px;
+}
+
+.menulinks li {
+    display: inline-block;
+    padding: 0px 10px;
+    background-color:#383e48;
+   
 }

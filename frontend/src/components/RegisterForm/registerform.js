@@ -13,7 +13,7 @@ class RegisterForm extends React.Component {
       }
     
       handleSubmit = (event) => {
-        alert('A form was submitted: ' + this.state);
+        
     
         fetch('http://trn-staging-back.us-east-2.elasticbeanstalk.com/api/signup', {
             method: 'POST',
@@ -24,8 +24,7 @@ class RegisterForm extends React.Component {
             },
             body: JSON.stringify(this.state)
           }).then(function(response) {
-            console.log(response)
-            return response.json();
+            
           });
     
         event.preventDefault();

@@ -1,6 +1,7 @@
 package com.notes.backend.chains;
 
 import com.notes.backend.entities.User;
+import com.notes.backend.exceptions.EmptyFirstNameException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,37 +12,32 @@ class FirstNameValidatorTest {
     private FirstNameValidator firstNameValidator = new FirstNameValidator();
 
     @Test
-    void nonEmptyFirstName() {
-        testUser.setFirstName("Roman");
-        boolean isValid = firstNameValidator.validate(testUser);
-        assertTrue(isValid);
+    void nonEmptyFirstName() throws EmptyFirstNameException {
+        testUser.setName("Roman");
+        firstNameValidator.validate(testUser);
     }
 
     @Test
     void emptyFirstName() {
-        testUser.setFirstName("");
-        boolean isValid = firstNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setName("");
+        assertThrows(EmptyFirstNameException.class, () -> firstNameValidator.validate(testUser));
     }
 
     @Test
     void spaceFirstName() {
-        testUser.setFirstName(" ");
-        boolean isValid = firstNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setName(" ");
+        assertThrows(EmptyFirstNameException.class, () -> firstNameValidator.validate(testUser));
     }
 
     @Test
     void twoSpacesFirstName() {
-        testUser.setFirstName("  ");
-        boolean isValid = firstNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setName("  ");
+        assertThrows(EmptyFirstNameException.class, () -> firstNameValidator.validate(testUser));
     }
 
     @Test
     void nullFirstName() {
-        testUser.setFirstName(null);
-        boolean isValid = firstNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setName(null);
+        assertThrows(EmptyFirstNameException.class, () -> firstNameValidator.validate(testUser));
     }
 }

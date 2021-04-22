@@ -1,7 +1,6 @@
 package com.notes.backend.filters;
 
 
-import com.notes.backend.entities.UserDetailsImpl;
 import com.notes.backend.services.UserDetailsServiceImpl;
 import com.notes.backend.utils.JwtUtils;
 import org.slf4j.Logger;

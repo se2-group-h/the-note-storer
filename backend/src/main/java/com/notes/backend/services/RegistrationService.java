@@ -23,12 +23,9 @@ public class RegistrationService {
         return userRepository.save(newUser);
     }
 
-    public boolean validateUser(User user) {
+    public void validateUser(User user) throws Exception {
         for (Validator validator : validationChain) {
-            if (!validator.validate(user)) {
-                return false;
-            }
+            validator.validate(user);
         }
-        return true;
     }
 }

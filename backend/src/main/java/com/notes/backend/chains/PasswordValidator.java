@@ -1,16 +1,21 @@
 package com.notes.backend.chains;
 
 import com.notes.backend.entities.User;
+import com.notes.backend.exceptions.ShortPasswordException;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PasswordValidator implements Validator {
 
     @Override
-    public boolean validate(User user) {
+    public boolean validate(User user) throws ShortPasswordException {
         if (user.getPassword() == null) {
-            return false;
+            throw new ShortPasswordException();
         }
-        return user.getPassword().length() > 5;
+        if (user.getPassword().length() > 5) {
+            return true;
+        } else {
+            throw new ShortPasswordException();
+        }
     }
 }

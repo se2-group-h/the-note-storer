@@ -2,6 +2,7 @@ package com.notes.backend.services;
 
 import com.notes.backend.dao.UserRepository;
 import com.notes.backend.entities.User;
+import com.notes.backend.exceptions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +24,14 @@ class RegistrationServiceTest {
     @Autowired
     private UserRepository userRepository;
 
-    private User testUser = new User(0,"Roman", "Shevchuk", "Dinosaur", "qwerty", "roma@gmail.com");
+    private User testUser = new User(0,"Roman", "Shevchuk", "Dinosaur", "qwerty", "roma@gmail.com", false, false);
 
     @Test
     void saveNewUser() {
         User user = new User();
         user.setUserId(0);
-        user.setFirstName("Vitaliy");
-        user.setLastName("Tsal");
+        user.setName("Vitaliy");
+        user.setSurname("Tsal");
         user.setLogin("Papich");
         user.setPassword("12345");
         user.setEmail("spitefuldick@gmail.com");
@@ -39,8 +40,8 @@ class RegistrationServiceTest {
     }
 
     @Test
-    void validateCorrectUser() {
-        assertTrue(registrationService.validateUser(testUser));
+    void validateCorrectUser() throws Exception {
+        registrationService.validateUser(testUser);
     }
 
     @Test
@@ -50,49 +51,49 @@ class RegistrationServiceTest {
 
     @Test
     void emptyFirstName() {
-        testUser.setFirstName("");
-        assertFalse(registrationService.validateUser(testUser));
+        testUser.setName("");
+        assertThrows(EmptyFirstNameException.class, () -> registrationService.validateUser(testUser));
     }
 
     @Test
     void emptyLastName() {
-        testUser.setLastName("");
-        assertFalse(registrationService.validateUser(testUser));
+        testUser.setSurname("");
+        assertThrows(EmptyLastNameException.class, () -> registrationService.validateUser(testUser));
     }
 
     @Test
     void existingLogin() {
         testUser.setLogin("Papich");
-        assertFalse(registrationService.validateUser(testUser));
+        assertThrows(NotUniqueLoginException.class, () -> registrationService.validateUser(testUser));
     }
 
     @Test
     void shortPassword() {
         testUser.setPassword("qwe");
-        assertFalse(registrationService.validateUser(testUser));
+        assertThrows(ShortPasswordException.class, () -> registrationService.validateUser(testUser));
     }
 
     @Test
     void firstInvalidEmail() {
         testUser.setEmail("romamail.com");
-        assertFalse(registrationService.validateUser(testUser));
+        assertThrows(InvalidEmailException.class, () -> registrationService.validateUser(testUser));
     }
 
     @Test
     void secondInvalidEmail() {
         testUser.setEmail("roma@mail");
-        assertFalse(registrationService.validateUser(testUser));
+        assertThrows(InvalidEmailException.class, () -> registrationService.validateUser(testUser));
     }
 
     @Test
     void thirdInvalidEmail() {
         testUser.setEmail("roma.@mail.com");
-        assertFalse(registrationService.validateUser(testUser));
+        assertThrows(InvalidEmailException.class, () -> registrationService.validateUser(testUser));
     }
 
     @Test
     void fourthInvalidEmail() {
         testUser.setEmail("@mail.com");
-        assertFalse(registrationService.validateUser(testUser));
+        assertThrows(InvalidEmailException.class, () -> registrationService.validateUser(testUser));
     }
 }

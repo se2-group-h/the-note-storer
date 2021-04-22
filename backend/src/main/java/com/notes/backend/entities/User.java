@@ -24,11 +24,18 @@ public class User {
     private String password;
 
     @Column(name = "first_name")
-    private String firstName;
+    private String name;
 
     @Column(name = "last_name")
-    private String lastName;
+    private String surname;
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "is_verified")
+    private boolean verified;
+
+    @Column(name = "is_admin")
+    private boolean admin;
+
 }

@@ -38,6 +38,7 @@ public class AuthService {
         authorizedUser.setUserId(userDetails.getId());
         authorizedUser.setFirstName(userDetails.getFirstName());
         authorizedUser.setToken(jwtUtils.generateJwtToken(authentication));
+        authorizedUser.setRecipeList(userDetails.getRecipeList());
 
         return authorizedUser;
     }

@@ -11,6 +11,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -24,7 +26,7 @@ class RegistrationServiceTest {
     @Autowired
     private UserRepository userRepository;
 
-    private User testUser = new User(0,"Roman", "Shevchuk", "Dinosaur", "qwerty", "roma@gmail.com", false, false);
+    private User testUser = new User(0,"Roman", "Shevchuk", "Dinosaur", "qwerty", "roma@gmail.com", false, false, List.of());
 
     @Test
     void saveNewUser() {

@@ -14,6 +14,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.List;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -27,7 +29,7 @@ class RegistrationControllerTest {
     @Test
     void register() throws Exception {
         MockMvc mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        User correctUser = new User(0,"Elephant007", "qwerty", "Kiryl", "Volkau", "kiryl@gmail.com", false, false);
+        User correctUser = new User(0,"Elephant007", "qwerty", "Kiryl", "Volkau", "kiryl@gmail.com", false, false, List.of());
         mvc.perform(MockMvcRequestBuilders
                 .post("/api/signup")
                 .content(asJsonString(correctUser))
@@ -39,7 +41,7 @@ class RegistrationControllerTest {
     @Test
     void invalidUserRegister() throws Exception {
         MockMvc mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        User incorrectUser = new User(0,"Elephant007", "qwe", "Kiryl", "Volkau", "kiryl@gmail.com", false, false);
+        User incorrectUser = new User(0,"Elephant007", "qwe", "Kiryl", "Volkau", "kiryl@gmail.com", false, false, List.of());
         mvc.perform(MockMvcRequestBuilders
                 .post("/api/signup")
                 .content(asJsonString(incorrectUser))

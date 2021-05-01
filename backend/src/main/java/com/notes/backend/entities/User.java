@@ -3,8 +3,10 @@ package com.notes.backend.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.IndexColumn;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -37,5 +39,8 @@ public class User {
 
     @Column(name = "is_admin")
     private boolean admin;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Recipe> savedRecipes;
 
 }

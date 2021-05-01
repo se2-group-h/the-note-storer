@@ -1,6 +1,8 @@
 package com.notes.backend.chains;
 
 import com.notes.backend.entities.User;
+import com.notes.backend.exceptions.EmptyLastNameException;
+import com.notes.backend.exceptions.ShortPasswordException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,37 +13,32 @@ class LastNameValidatorTest {
     private LastNameValidator lastNameValidator = new LastNameValidator();
 
     @Test
-    public void nonEmptyLastName() {
-        testUser.setLastName("Shevchuk");
-        boolean isValid = lastNameValidator.validate(testUser);
-        assertTrue(isValid);
+    public void nonEmptyLastName() throws EmptyLastNameException {
+        testUser.setSurname("Shevchuk");
+        lastNameValidator.validate(testUser);
     }
 
     @Test
     public void emptyLastName() {
-        testUser.setLastName("");
-        boolean isValid = lastNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setSurname("");
+        assertThrows(EmptyLastNameException.class, () -> lastNameValidator.validate(testUser));
     }
 
     @Test
     public void spaceLastName() {
-        testUser.setLastName(" ");
-        boolean isValid = lastNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setSurname(" ");
+        assertThrows(EmptyLastNameException.class, () -> lastNameValidator.validate(testUser));
     }
 
     @Test
     public void twoSpacesLastName() {
-        testUser.setLastName(" ");
-        boolean isValid = lastNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setSurname(" ");
+        assertThrows(EmptyLastNameException.class, () -> lastNameValidator.validate(testUser));
     }
 
     @Test
     public void nullLastName() {
-        testUser.setLastName(null);
-        boolean isValid = lastNameValidator.validate(testUser);
-        assertFalse(isValid);
+        testUser.setSurname(null);
+        assertThrows(EmptyLastNameException.class, () -> lastNameValidator.validate(testUser));
     }
 }

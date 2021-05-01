@@ -21,12 +21,12 @@ public class RegistrationController {
 
     @PostMapping
     public ResponseEntity<?> register(@RequestBody User user) {
-        boolean isValid = registrationService.validateUser(user);
-        if (isValid) {
+        try {
+            registrationService.validateUser(user);
             User savedUser = registrationService.saveNewUser(user);
             return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
-        } else {
-            return new ResponseEntity<>("Invalid form", HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 

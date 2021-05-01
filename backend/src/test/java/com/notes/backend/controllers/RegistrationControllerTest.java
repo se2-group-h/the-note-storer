@@ -27,23 +27,25 @@ class RegistrationControllerTest {
     @Test
     void register() throws Exception {
         MockMvc mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        User correctUser = new User(0,"Elephant007", "qwerty", "Kiryl", "Volkau", "kiryl@gmail.com");
+        User correctUser = new User(0,"Elephant007", "qwerty", "Kiryl", "Volkau", "kiryl@gmail.com", false, false);
         mvc.perform(MockMvcRequestBuilders
                 .post("/api/signup")
                 .content(asJsonString(correctUser))
                 .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful());
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().is2xxSuccessful());
     }
 
     @Test
     void invalidUserRegister() throws Exception {
         MockMvc mvc = MockMvcBuilders.webAppContextSetup(context).build();
-        User incorrectUser = new User(0,"Elephant007", "qwe", "Kiryl", "Volkau", "kiryl@gmail.com");
+        User incorrectUser = new User(0,"Elephant007", "qwe", "Kiryl", "Volkau", "kiryl@gmail.com", false, false);
         mvc.perform(MockMvcRequestBuilders
                 .post("/api/signup")
                 .content(asJsonString(incorrectUser))
                 .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.APPLICATION_JSON)).andExpect(status().is4xxClientError());
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().is4xxClientError());
     }
 
     public static String asJsonString(final Object obj) {

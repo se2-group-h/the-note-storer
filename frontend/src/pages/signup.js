@@ -5,9 +5,9 @@ import RegisterForm from '../components/RegisterForm/registerform.js';
 const Signup = () => {
     return (
         <div>
-            <Navbar />
+            <Navbar/>
             <div id="body">
-            <RegisterForm />
+                <RegisterForm/>
             </div>
         </div>
     )

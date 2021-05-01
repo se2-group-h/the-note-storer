@@ -3,12 +3,12 @@ import './searchbar.css';
 
 const SearchBar = () => (
     <form action="/" method="get">
-    <div class="container">
+    <div className="container">
         <input
             type="text"
             id="header-search"
             placeholder="Search"
-            name="s" 
+            name="s"
         />
         <button type="submit">Search</button>
     </div>

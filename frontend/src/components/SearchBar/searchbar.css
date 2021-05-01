@@ -1,6 +1,6 @@
 .container {
     display: inline-block;
-    
+
 }
 
 input[type=text] {
@@ -9,10 +9,9 @@ input[type=text] {
     border: none;
     margin-top: 8px;
     font-size: 18px;
-    border: 1px solid #ccc;  
+    border: 1px solid #ccc;
     width: 300px;
-  }
-  
+}
 
 
 button {
@@ -26,5 +25,5 @@ button {
     cursor: pointer;
     background: #ddd;
     margin-top: 8px;
-    border: 0.5px solid #ccc;  
+    border: 0.5px solid #ccc;
 }

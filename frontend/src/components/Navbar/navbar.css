@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     background-color: none;
 }
 
@@ -14,7 +14,6 @@ li, a {
     text-decoration: none;
     font-weight: bold;
 }
-
 
 
 header {
@@ -32,16 +31,16 @@ header {
 }
 
 nav {
-    background-color:#383e48;
+    background-color: #383e48;
     margin-right: auto;
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 .nav__links li {
     display: inline-block;
     padding: 0px 20px;
-    background-color:#383e48;
-   
+    background-color: #383e48;
+
 }
 
 
@@ -51,22 +50,23 @@ nav {
 }
 
 .nav__links li a:hover {
-    color:rgba(10, 82, 99, 0.774);
+    color: rgba(10, 82, 99, 0.774);
 }
 
 .cta {
-    background-color:#383e48;
+    background-color: #383e48;
 }
+
 /*909593  469ebe  */
 #sign-in {
     padding: 6px 12px;
     height: 48px;
     width: 80px;
-    background-color:#2c7868;
+    background-color: #2c7868;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition:all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 100;
     font-size: 15px;
@@ -75,11 +75,11 @@ nav {
 }
 
 #button:hover {
-    background-color:#0088a9;
+    background-color: #0088a9;
 }
 
 .menu {
-    display:none;
+    display: none;
     margin-top: 5px;
 }
 
@@ -88,10 +88,10 @@ nav {
     width: 0;
     position: fixed;
     z-index: 1;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     background-color: beige;
-    overflow-x:hidden;
+    overflow-x: hidden;
     transition: all 0.5s ease 0s;
 }
 
@@ -111,21 +111,22 @@ nav {
 }
 
 .overlay a:hover, .overlay a:focus {
-    color:#0088a9;
+    color: #0088a9;
 }
 
 .overlay .close {
     position: absolute;
-    top:20px;
-    right:45px;
-    font-size:60;
+    top: 20px;
+    right: 45px;
+    font-size: 60;
 }
 
 .selectedlink {
     color: #EDF5E1;
-    bottom:20%; /*Change this to increase/decrease distance*/
-    border-bottom: 3px solid  #EDF5E1; 
+    bottom: 20%; /*Change this to increase/decrease distance*/
+    border-bottom: 3px solid #EDF5E1;
 }
+
 /*
 @media screen and (max-height: 450px) {
     .overlay a {
@@ -156,18 +157,18 @@ i.fa {
 h2 {
     margin-top: 12px;
     margin-left: 5px;
-    color:#ecbc40;
+    color: #ecbc40;
 }
 
 #register {
     padding: 6px 12px;
     height: 48px;
     width: 80px;
-    background-color:#ecbc40;
+    background-color: #ecbc40;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition:all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 50;
     font-size: 15px;
@@ -186,6 +187,6 @@ h2 {
 .menulinks li {
     display: inline-block;
     padding: 0px 10px;
-    background-color:#383e48;
-   
+    background-color: #383e48;
+
 }

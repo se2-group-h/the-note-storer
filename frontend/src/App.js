@@ -6,17 +6,17 @@ import Signin from './pages/signin.js';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
-  return (
-    <Router>
-    <div>
-    <Switch>
-        <Route path exact="/" component={Home} />
-        <Route path="/register" component={Signup} />
-        <Route path="/signin" component={Signin} />
-    </Switch>
-    </div>
-    </Router>
-  )
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route path="/" exact={true} component={Home}/>
+                    <Route path="/register" component={Signup}/>
+                    <Route path="/signin" component={Signin}/>
+                </Switch>
+            </div>
+        </Router>
+    )
 }
 
 export default App;

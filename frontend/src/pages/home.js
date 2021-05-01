@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/navbar.js';
 const Home = () => {
     return (
         <div>
-            <Navbar />
+            <Navbar/>
             <div id="body">
             </div>
         </div>

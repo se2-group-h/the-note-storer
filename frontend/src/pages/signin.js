@@ -5,9 +5,9 @@ import Signinform from '../components/SignInForm/signinform.js';
 const Signin = () => {
     return (
         <div>
-            <Navbar />
+            <Navbar/>
             <div id="body">
-            <Signinform />
+                <Signinform/>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import App from './App';
 
 /*test('renders learn react link', () => {
@@ -8,7 +8,7 @@ import App from './App';
 });*/
 
 test('should take a snapshot', () => {
-  const { asFragment } = render(<App />)
-  
-  expect(asFragment(<App />)).toMatchSnapshot();
+    const {asFragment} = render(<App/>)
+
+    expect(asFragment(<App/>)).toMatchSnapshot();
 });

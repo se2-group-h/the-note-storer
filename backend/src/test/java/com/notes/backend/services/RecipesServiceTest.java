@@ -3,6 +3,7 @@ package com.notes.backend.services;
 import com.notes.backend.dao.RecipeRepository;
 import com.notes.backend.entities.Recipe;
 import com.notes.backend.exceptions.ExistingRecipeException;
+import com.notes.backend.exceptions.NoSuchRecipeException;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ class RecipesServiceTest {
     @Autowired
     private RecipesService recipesService;
 
-    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f);
+    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f, List.of());
 
     @Test
     void getAllRecipes() {
@@ -32,26 +33,25 @@ class RecipesServiceTest {
     }
 
     @Test
-    void getById() {
-        Optional<Recipe> byId = recipesService.getById(1);
-        assertTrue(byId.isPresent());
+    void getById() throws NoSuchRecipeException {
+        Recipe byId = recipesService.getById(1);
+        assertEquals(1, byId.getRecipeId());
     }
 
     @Test
     void getByIdWhichDoesNotExist() {
-        Optional<Recipe> byId = recipesService.getById(5);
-        assertTrue(byId.isEmpty());
+        assertThrows(NoSuchRecipeException.class, () -> recipesService.getById(5));
     }
 
     @Test
     void saveRecipe() throws ExistingRecipeException {
         Recipe recipe = recipesService.saveRecipe(someRecipe);
-        assertTrue(recipe.getId() != 0);
+        assertTrue(recipe.getRecipeId() != 0);
     }
 
     @Test
     void saveRecipeWithId() {
-        someRecipe.setId(14);
+        someRecipe.setRecipeId(14);
         assertThrows(ExistingRecipeException.class, () -> recipesService.saveRecipe(someRecipe));
     }
 
@@ -65,7 +65,6 @@ class RecipesServiceTest {
     @Test
     void deleteRecipeById() {
         recipesService.deleteRecipeById(2);
-        Optional<Recipe> byId = recipesService.getById(2);
-        assertTrue(byId.isEmpty());
+        assertThrows(NoSuchRecipeException.class, () -> recipesService.getById(2));
     }
 }

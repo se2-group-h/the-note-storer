@@ -13,6 +13,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.List;
+
 import static org.hamcrest.Matchers.not;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -26,7 +28,7 @@ class RecipeControllerTest {
     @Autowired
     private WebApplicationContext context;
 
-    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f);
+    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f, List.of());
 
     @Test
     void getAllRecipes() throws Exception {
@@ -44,7 +46,7 @@ class RecipeControllerTest {
                 .build();
         mvc.perform(get("/api/recipes/3"))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$.id").value(3));
+                .andExpect(jsonPath("$.recipeId").value(3));
     }
 
     @Test
@@ -63,12 +65,12 @@ class RecipeControllerTest {
                 .build();
         mvc.perform(post("/api/recipes").content(asJsonString(someRecipe)).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$.id", not(0)));
+                .andExpect(jsonPath("$.recipeId", not(0)));
     }
 
     @Test
     void saveRecipeWithID() throws Exception {
-        someRecipe.setId(5);
+        someRecipe.setRecipeId(5);
         MockMvc mvc = MockMvcBuilders
                 .webAppContextSetup(context)
                 .build();

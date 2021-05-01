@@ -1,15 +1,16 @@
 package com.notes.backend.services;
 
+import com.notes.backend.dao.UserRecipeRepository;
 import com.notes.backend.dao.UserRepository;
 import com.notes.backend.entities.Recipe;
 import com.notes.backend.entities.RecipeLink;
 import com.notes.backend.entities.User;
+import com.notes.backend.entities.UserRecipe;
 import com.notes.backend.exceptions.NoSuchRecipeException;
 import com.notes.backend.exceptions.NuSuchUserException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,42 +19,31 @@ public class UserService {
 
     private UserRepository userRepository;
     private RecipesService recipesService;
+    private UserRecipeRepository userRecipeRepository;
 
-    public Optional<User> getById(Integer userId) {
-        return userRepository.findById(userId);
+    public User getById(Integer userId) throws NuSuchUserException {
+        Optional<User> userById =  userRepository.findById(userId);
+
+        if (userById.isEmpty()) {
+            throw new NuSuchUserException();
+        }
+
+        return userById.get();
     }
 
     public void saveUserRecipe(RecipeLink link) throws NoSuchRecipeException, NuSuchUserException {
-        Optional<Recipe> recipeById = recipesService.getById(link.getRecipeId());
-        Optional<User> userById = getById(link.getUserId());
+        User userById = getById(link.getUserId());
+        Recipe recipeById = recipesService.getById(link.getRecipeId());
 
-        if (recipeById.isEmpty()) {
-            throw new NoSuchRecipeException();
-        }
-
-        if (userById.isEmpty()) {
-            throw new NuSuchUserException();
-        }
-
-        List<Recipe> userRecipes = userById.get().getSavedRecipes();
-        userRecipes.add(recipeById.get());
-        userRepository.save(userById.get());
+        UserRecipe newLink = new UserRecipe(0, userById, recipeById);
+        userRecipeRepository.save(newLink);
     }
 
     public void deleteUserRecipe(Integer userId, Integer recipeId) throws NoSuchRecipeException, NuSuchUserException {
-        Optional<Recipe> recipeById = recipesService.getById(recipeId);
-        Optional<User> userById = getById(userId);
+        Recipe recipeById = recipesService.getById(recipeId);
+        User userById = getById(userId);
 
-        if (recipeById.isEmpty()) {
-            throw new NoSuchRecipeException();
-        }
-
-        if (userById.isEmpty()) {
-            throw new NuSuchUserException();
-        }
-
-        List<Recipe> userRecipes = userById.get().getSavedRecipes();
-        userRecipes.removeIf(recipe -> recipe.getId().equals(recipeId));
-        userRepository.save(userById.get());
+        Optional<UserRecipe> byUserAndRecipe = userRecipeRepository.findByUserAndRecipe(userById, recipeById);
+        byUserAndRecipe.ifPresent((entry) -> userRecipeRepository.delete(entry));
     }
 }

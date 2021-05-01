@@ -11,6 +11,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
+import static java.util.stream.Collectors.toList;
+
 @Getter
 @Setter
 public class UserDetailsImpl implements UserDetails {
@@ -38,7 +40,7 @@ public class UserDetailsImpl implements UserDetails {
                 user.getName(),
                 user.getLogin(),
                 user.getPassword(),
-                user.getSavedRecipes());
+                user.getSavedRecipes().stream().map(UserRecipe::getNormalRecipe).collect(toList()));
     }
 
     @Override

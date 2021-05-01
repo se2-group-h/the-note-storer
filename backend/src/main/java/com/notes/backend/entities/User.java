@@ -3,7 +3,8 @@ package com.notes.backend.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.IndexColumn;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,6 +18,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Integer userId;
 
     @Column(name = "login")
@@ -40,7 +42,7 @@ public class User {
     @Column(name = "is_admin")
     private boolean admin;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Recipe> savedRecipes;
+    @OneToMany(mappedBy = "user")
+    private List<UserRecipe> savedRecipes;
 
 }

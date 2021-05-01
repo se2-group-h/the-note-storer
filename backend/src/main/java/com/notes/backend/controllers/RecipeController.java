@@ -2,6 +2,7 @@ package com.notes.backend.controllers;
 
 import com.notes.backend.entities.Recipe;
 import com.notes.backend.exceptions.ExistingRecipeException;
+import com.notes.backend.exceptions.NoSuchRecipeException;
 import com.notes.backend.services.RecipesService;
 import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
@@ -10,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Api(tags = "Recipes")
 @RestController
@@ -28,9 +28,12 @@ public class RecipeController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getRecipeInfo(@PathVariable(name = "id") Integer recipeId) {
-        Optional<Recipe> recipeById = recipesService.getById(recipeId);
-        return recipeById.map((recipe) -> new ResponseEntity<>(recipe, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        try {
+            Recipe recipeById = recipesService.getById(recipeId);
+            return new ResponseEntity<>(recipeById, HttpStatus.OK);
+        } catch (NoSuchRecipeException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping
@@ -45,12 +48,14 @@ public class RecipeController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateRecipe(@PathVariable(name = "id") Integer recipeId, @RequestBody Recipe recipe) {
-        Optional<Recipe> recipeById = recipesService.getById(recipeId);
-        return recipeById.map(foundRecipe -> {
-            recipe.setId(recipeId);
+        try {
+            recipesService.getById(recipeId);
+            recipe.setRecipeId(recipeId);
             Recipe updateRecipe = recipesService.updateRecipe(recipe);
             return new ResponseEntity<>(updateRecipe, HttpStatus.OK);
-        }).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        } catch (NoSuchRecipeException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping("/{id}")

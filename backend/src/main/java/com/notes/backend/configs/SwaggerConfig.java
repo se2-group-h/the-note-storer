@@ -23,7 +23,7 @@ public class SwaggerConfig {
     }
 
     @Bean
-    public Docket swaggerConfiguration(){
+    public Docket swaggerConfiguration() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.notes.backend.controllers"))
@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 .apiInfo(apiDetails());
     }
 
-    private ApiInfo apiDetails(){
+    private ApiInfo apiDetails() {
         return new ApiInfo("Notes API",
                 null,
                 "v1",

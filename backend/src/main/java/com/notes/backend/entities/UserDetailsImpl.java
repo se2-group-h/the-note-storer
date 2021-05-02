@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -21,12 +22,14 @@ public class UserDetailsImpl implements UserDetails {
     private String password;
     private String firstName;
     private Collection<? extends GrantedAuthority> authorities;
+    private List<Recipe> recipeList;
 
-    public UserDetailsImpl(Integer id, String firstName, String login, String password) {
+    public UserDetailsImpl(Integer id, String firstName, String login, String password, List<Recipe> recipes) {
         this.id = id;
         this.firstName = firstName;
         this.username = login;
         this.password = password;
+        this.recipeList = recipes;
     }
 
     public static UserDetailsImpl build(User user) {
@@ -34,7 +37,8 @@ public class UserDetailsImpl implements UserDetails {
                 user.getUserId(),
                 user.getName(),
                 user.getLogin(),
-                user.getPassword());
+                user.getPassword(),
+                user.getSavedRecipes());
     }
 
     @Override

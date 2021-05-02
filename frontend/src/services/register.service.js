@@ -5,8 +5,8 @@ const registerAsync = async (registerData) => {
         login: registerData.login,
         password: registerData.password,
         email: registerData.email,
-        firstName: registerData.firstName,
-        lastName: registerData.lastName
+        name: registerData.name,
+        surname: registerData.surname
     };
 
     const response = await fetch(registerUrl, {

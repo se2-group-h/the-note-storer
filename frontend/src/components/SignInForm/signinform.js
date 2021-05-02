@@ -3,8 +3,7 @@ import './signinform.css';
 import noteadderimg from '../../images/signinform_img.png';
 import env from '../../appsettings.json';
 
-
-class Signinform extends React.Component {
+class SignInForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -85,4 +84,4 @@ class Signinform extends React.Component {
     }
 }
 
-export default Signinform
+export default SignInForm

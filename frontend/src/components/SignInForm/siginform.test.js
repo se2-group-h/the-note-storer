@@ -9,7 +9,7 @@ test("check sign in button", () => {
     expect(btn).toBeTruthy();
 });
 
-it("button content sign in", () => {
+test("button content sign in", () => {
     const {queryByTitle} = render(
         <SignInForm/>
     );
@@ -17,7 +17,7 @@ it("button content sign in", () => {
     expect(btn).toHaveTextContent("Sign-In");
 });
 
-it("image check", () => {
+test("image check", () => {
     const {queryByTitle} = render(
         <SignInForm/>
     );

@@ -8,7 +8,9 @@ import App from './App';
 });*/
 
 test('should take a snapshot', () => {
-    const {asFragment} = render(<App/>)
+  render(<App />);
 
-    expect(asFragment(<App/>)).toMatchSnapshot();
+  screen.debug();
+
+  expect(screen.getByText('RecipeIT')).toBeInTheDocument();
 });

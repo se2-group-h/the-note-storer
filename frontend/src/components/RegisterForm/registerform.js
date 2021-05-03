@@ -5,6 +5,7 @@ import './registerform.css';
 import noteadderimg from '../../images/cheflogo.png';
 import env from '../../appsettings.json';
 
+
 class RegisterForm extends React.Component {
     constructor(props) {
         super(props);
@@ -14,8 +15,10 @@ class RegisterForm extends React.Component {
     handleChange = (event) => {
         this.setState({[event.target.name]: event.target.value});
     }
+    
 
     handleSubmit = (event) => {
+        
         event.preventDefault();
 
         fetch(`${env.url}/api/signup`, {
@@ -55,6 +58,7 @@ class RegisterForm extends React.Component {
                                 onChange={this.handleChange}
                                 name="name"
                             />
+                            
                             <label className='form-label'>Last Name:</label>
                             <input
                                 className='form-input'

@@ -2,7 +2,7 @@ import {render} from "@testing-library/react";
 import {MemoryRouter} from 'react-router-dom';
 
 import Navbar from './navbar';
-it("check register render", ()=>{
+test("check register render", ()=>{
     const { queryByTitle } = render(
     <MemoryRouter>
     <Navbar />
@@ -12,7 +12,7 @@ it("check register render", ()=>{
     expect(btn).toBeTruthy();
 });
 
-it("check signin render", ()=>{
+test("check signin render", ()=>{
     const { queryByTitle } = render(
     <MemoryRouter>
     <Navbar />
@@ -22,7 +22,7 @@ it("check signin render", ()=>{
     expect(btn).toBeTruthy();
 });
 
-it("button content sign up", ()=>{
+test("button content sign up", ()=>{
     const { queryByTitle } = render(
         <MemoryRouter>
     <Navbar />
@@ -32,7 +32,7 @@ it("button content sign up", ()=>{
     expect(btn).toHaveTextContent("Register");
 });
 
-it("button content sign in", ()=>{
+test("button content sign in", ()=>{
     const { queryByTitle } = render(
         <MemoryRouter>
     <Navbar />

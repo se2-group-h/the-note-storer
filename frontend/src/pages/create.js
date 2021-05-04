@@ -1,17 +1,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar/navbar.js';
-import RegisterForm from '../components/RegisterForm/registerform.js';
+import CreateForm from '../components/CreateRecipe/createrecipe.js';
 
-const Signup = () => {
+const Create = () => {
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div id="body">
-                <RegisterForm/>
+            <CreateForm />
             </div>
         </div>
     )
 }
 
 
-export default Signup
+export default Create

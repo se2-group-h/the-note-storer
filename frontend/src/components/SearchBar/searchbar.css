@@ -1,0 +1,29 @@
+.container {
+    display: inline-block;
+
+}
+
+input[type=text] {
+    border: none;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+
+button {
+    float: right;
+    display: block;
+    padding: 6px;
+    text-align: left;
+    font-size: 18px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+    margin-top: 8px;
+    border: 0.5px solid #ccc;
+}

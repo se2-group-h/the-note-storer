@@ -1,28 +1,24 @@
 
-.form-container {
+.form-containers {
     margin: 50px 50px 0 25%;
     width: 800px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 10px;
-    height: 500px;
+    height: 600px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+  }
 
-.form-content-right {
-    background-color: white;
-    border-radius: 0 10px 10px 0;
+  
+ 
+  .form-content-lefts {
+    border-radius: 0 10 10 0;
     position: relative;
-}
+  }
+  
 
-.form-content-left {
-    border-radius: 0 10px 10px 0;
-    position: relative;
-}
-
-
-.form {
+  .form {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -33,47 +29,46 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #2c7868;
-}
+    background: #2f250c;
+  }
 
-.form h1 {
+  .form h3 {
     font-size: 2rem;
     text-align: center;
     width: 80%;
     margin-bottom: 1rem;
     color: beige;
-    background: #2c7868;
+    background: #2f250c;
     font-family: 'Roboto', sans-serif;
-}
-
-/*#05386B     */
-.form-inputs {
+  }
+  /*#05386B     */
+  .form-inputs {
     margin-bottom: 0.5rem;
     width: 80%;
-    background: #2c7868;
-}
+    background: #2f250c;
+  }
+  
+  input[type=text] {
+      background:white;
+      font-family: monospace;
+  }
 
-input[type=text] {
-    background: white;
+  input[type=password] {
+    background:white;
     font-family: monospace;
 }
 
-input[type=password] {
-    background: white;
-    font-family: monospace;
-}
-
-
-.form-label {
+  
+  .form-label {
     display: inline-block;
     font-size: 1rem;
     margin-bottom: 6px;
     color: beige;
-    background: #2c7868;
+    background: #2f250c;
     font-family: 'Roboto', sans-serif;
-}
-
-.form-input {
+  }
+  
+  .form-input {
     display: block;
     padding-left: 10px;
     outline: none;
@@ -81,34 +76,31 @@ input[type=password] {
     height: 40px;
     width: 100%;
     border: none;
-}
-
-.form-input::placeholder {
+  }
+  
+  .form-input::placeholder {
     color: #595959;
     font-size: 12px;
-}
-
-.form-input-btn {
+  }
+  
+  .form-input-btn {
     width: 60%;
     height: 50px;
     margin-top: 20px;
     margin-left: 20%;
-    border-radius: 10px;
-    background: #ecbc40;
+    border-radius:10px;
+    background:#ecbc40;
     outline: none;
     border: none;
     color: black;
     font-size: 1rem;
     align-items: center;
-}
-
-.form-input-btn:hover {
+  }
+  
+  .form-input-btn:hover {
     cursor: pointer;
-    background: #8d7026;
+    background:#8d7026;
     transition: all 0.4s ease-out;
-}
-
-#bookshelfpic {
-    width: 100%;
-    height: 100%;
-}
+  }
+  
+  

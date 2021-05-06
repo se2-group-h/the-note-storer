@@ -4,7 +4,7 @@ MAINTAINER SE2 Group H
 COPY pom.xml /build/
 COPY src /build/src/
 WORKDIR /build/
-RUN mvn package
+RUN mvn package -Dmaven.test.skip=true
 # run for staging
 FROM openjdk:11.0.10
 WORKDIR /app

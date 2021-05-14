@@ -1,20 +1,20 @@
 package com.notes.backend.services;
 
-import com.notes.backend.dao.RecipeRepository;
 import com.notes.backend.entities.Recipe;
+import com.notes.backend.entities.User;
+import com.notes.backend.entities.UserRecipe;
 import com.notes.backend.exceptions.ExistingRecipeException;
 import com.notes.backend.exceptions.NoSuchRecipeException;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -25,6 +25,7 @@ class RecipesServiceTest {
     private RecipesService recipesService;
 
     private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f, List.of());
+    private User testUser = new User(0, "dino", "123456","Andrew","Whatever","some@email.com",true, false, List.of());
 
     @Test
     void getAllRecipes() {
@@ -42,6 +43,34 @@ class RecipesServiceTest {
     void getByIdWhichDoesNotExist() {
         assertThrows(NoSuchRecipeException.class, () -> recipesService.getById(5));
     }
+
+	@Test
+	void getAllUserRecipes() {
+		UserRecipe userRecipe = new UserRecipe(5, testUser, someRecipe);
+		testUser.setSavedRecipes(List.of(userRecipe));
+		List<Recipe> allRecipes = recipesService.getUserRecipes(testUser);
+		assertEquals(allRecipes.size(), 1);
+	}
+
+	@Test
+	void getAllUserRecipesWithEmptyList() {
+		testUser.setSavedRecipes(List.of());
+		List<Recipe> allRecipes = recipesService.getUserRecipes(testUser);
+		assertEquals(allRecipes.size(), 0);
+	}
+
+	@Test
+	void getAllUserRecipesWithNullList() {
+		testUser.setSavedRecipes(null);
+		List<Recipe> allRecipes = recipesService.getUserRecipes(testUser);
+		assertEquals(allRecipes.size(), 0);
+	}
+
+	@Test
+	void getAllUserRecipesWithNullUser() {
+		List<Recipe> allRecipes = recipesService.getUserRecipes(null);
+		assertEquals(allRecipes.size(), 0);
+	}
 
     @Test
     void saveRecipe() throws ExistingRecipeException {

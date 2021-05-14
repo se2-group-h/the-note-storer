@@ -2,7 +2,11 @@ package com.notes.backend.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.notes.backend.entities.Recipe;
+import java.util.List;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,17 +16,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
-import java.util.List;
-
 import static org.hamcrest.Matchers.not;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @ActiveProfiles("dev")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RecipeControllerTest {
 
     @Autowired
@@ -58,6 +63,44 @@ class RecipeControllerTest {
                 .andExpect(status().is4xxClientError());
     }
 
+
+	@Test
+	void getAllUserRecipesCheckCode() throws Exception {
+		MockMvc mvc = MockMvcBuilders
+				.webAppContextSetup(context)
+				.build();
+		mvc.perform(get("/api/recipes/user/1"))
+				.andExpect(status().is2xxSuccessful());
+	}
+
+	@Test
+	void getAllUserRecipesCheckContent() throws Exception {
+		List<Recipe> recipes = List.of(new Recipe(2, 2, "Steak", "Kill one cow", "fast", 5.0f, List.of()));
+		MockMvc mvc = MockMvcBuilders
+				.webAppContextSetup(context)
+				.build();
+		mvc.perform(get("/api/recipes/user/1"))
+				.andExpect(content().json(asJsonString(recipes)));
+	}
+
+	@Test
+	void getAllUserRecipesWithNonExistingUser() throws Exception {
+		MockMvc mvc = MockMvcBuilders
+				.webAppContextSetup(context)
+				.build();
+		mvc.perform(get("/api/recipes/user/9999"))
+				.andExpect(content().json("[]"));
+	}
+
+	@Test
+	void getAllUserRecipesWithoutUser() throws Exception {
+		MockMvc mvc = MockMvcBuilders
+				.webAppContextSetup(context)
+				.build();
+		mvc.perform(get("/api/recipes/user/"))
+				.andExpect(status().is4xxClientError());
+	}
+
     @Test
     void saveRecipe() throws Exception {
         MockMvc mvc = MockMvcBuilders
@@ -90,6 +133,7 @@ class RecipeControllerTest {
     }
 
     @Test
+	@AfterAll
     void deleteRecipe() throws Exception {
         MockMvc mvc = MockMvcBuilders
                 .webAppContextSetup(context)

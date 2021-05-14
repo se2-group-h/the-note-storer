@@ -3,14 +3,16 @@ package com.notes.backend.services;
 import com.notes.backend.dao.RecipeRepository;
 import com.notes.backend.dao.UserRecipeRepository;
 import com.notes.backend.entities.Recipe;
+import com.notes.backend.entities.User;
 import com.notes.backend.entities.UserRecipe;
 import com.notes.backend.exceptions.ExistingRecipeException;
 import com.notes.backend.exceptions.NoSuchRecipeException;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
@@ -48,4 +50,14 @@ public class RecipesService {
         userRecipeRepository.deleteAll(allByRecipe_recipeId);
         recipeRepository.deleteById(recipeId);
     }
+
+	public List<Recipe> getUserRecipes(User user) {
+    	if (user == null || user.getSavedRecipes() == null) {
+    		return Collections.emptyList();
+		}
+		return user.getSavedRecipes()
+				.stream()
+				.map(UserRecipe::getNormalRecipe)
+				.collect(Collectors.toList());
+	}
 }

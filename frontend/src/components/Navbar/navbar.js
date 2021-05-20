@@ -25,7 +25,7 @@ const Navbar = () => {
                     <button id="sign-in" title="signinbtn">Sign-In</button>
                 </NavLink>
                 <ul className="menulinks">
-                    <li><i className="fa fa-plus-square-o" aria-hidden="true" name="addsign"/></li>
+                    <li><NavLink exact={true} to="/create" activeClassName="selectedlink"><i className="fa fa-plus-square-o" aria-hidden="true" name="addsign"/></NavLink></li>
                     <li><i className="fa fa-shopping-basket" aria-hidden="true" name="shoppingcartsign"/></li>
                     <li><i className="fa fa-user" aria-hidden="true" name="profilesign"/></li>
                 </ul>

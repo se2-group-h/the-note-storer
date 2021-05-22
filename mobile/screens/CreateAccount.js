@@ -3,7 +3,9 @@ import { Text, TouchableOpacity, View, TextInput  } from 'react-native';
 import { styles } from '../styles/styles';
 
 export default function LoginingIn({ navigation }) {  
-
+  const pressHandlerLogin = () => {
+    navigation.navigate('Login');
+}
     return (
         <View style={styles.container}>
             <TextInput placeholder='Name'
@@ -22,7 +24,7 @@ export default function LoginingIn({ navigation }) {
             <TextInput placeholder='Repeat Password'
                        secureTextEntry={true}
                        style={styles.textInput}/>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={pressHandlerLogin}>
               <Text style={styles.textColor}>
                 Create Account
               </Text>

@@ -13,14 +13,17 @@ import {
   ScrollView,
 } from "react-native";
 import { styles } from "../styles/styles";
+import ReceiptPage from "./ReceiptPage";
+import ReactPage from "./ReceiptPage";
 
 export default function LoginingIn({ navigation }) {
-  
   const pressHandlerUserProfile = () => {
-    navigation.navigate('UserProfilePage');
-}
-  
- 
+    navigation.navigate("UserProfilePage");
+  };
+
+  const pressHandlerReceiptPage = () => {
+    navigation.navigate("ReceiptPage");
+  };
 
   const styles = StyleSheet.create({
     container: {
@@ -72,7 +75,6 @@ export default function LoginingIn({ navigation }) {
       justifyContent: "center",
     },
   });
-  
 
   const Data = [
     { id: 1, text: "Add receipt 1" },
@@ -92,7 +94,7 @@ export default function LoginingIn({ navigation }) {
     setinputText(item.text);
     seteditItem(item.id);
   };
-  
+
   const renderItem = ({ item, index }) => {
     return (
       <TouchableOpacity style={styles.item} onPress={() => onPressItem(item)}>
@@ -118,37 +120,17 @@ export default function LoginingIn({ navigation }) {
     setisModelVisible(false);
   };
 
-
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList data={data} keyExtractor={(item) => item.id.toString()} renderItem={renderItem} extraData={isRender} />
-      
-<View style={styles.container1}>
- <TouchableOpacity style={styles.button} onPress={() => pressHandlerUserProfile()}>
-   <Text style={styles.textColor}>
-    User Profile
-   </Text>
- </TouchableOpacity>
-</View>
-      <Modal animationType="fade" visible={isModalVisible} onRequestClose={() => setisModelVisible(false)}>
-        <View style={styles.modalView}>
-          <Text style={styles.text}>Change Text: </Text>
-          <TextInput
-            style={styles.TextInput}
-            onChangeText={(text) => setinputText(text)}
-            defaultValue={inputText}
-            editable={true}
-            multiline={false}
-            maxLength={200}
-          ></TextInput>
-          <TouchableOpacity onPress={() => onPressSaveEdit()} style={styles.touchableSave}>
-            <Text style={styles.text}>Save</Text>
-          </TouchableOpacity>
-          
-  
-  
-        </View>
-      </Modal>
+      <ReceiptPage />
+      <View style={styles.container1}>
+        <TouchableOpacity style={styles.button} onPress={() => pressHandlerUserProfile()}>
+          <Text style={styles.textColor}>User Profile</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => pressHandlerReceiptPage()}>
+          <Text style={styles.textColor}>My Receipts</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }

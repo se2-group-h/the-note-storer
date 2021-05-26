@@ -51,4 +51,10 @@ export const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 20,
   },
+  userprofile: {
+    fontSize: 25,
+    borderWidth: 1,
+    borderColor: "#cecece",
+    padding: 30,
+    marginBottom: 20,},
 });

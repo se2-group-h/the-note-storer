@@ -15,9 +15,12 @@ import {
 import { styles } from "../styles/styles";
 
 export default function LoginingIn({ navigation }) {
-  const pressHandler = () => {
-    navigation.navigate("Registration");
-  };
+  
+  const pressHandlerUserProfile = () => {
+    navigation.navigate('UserProfilePage');
+}
+  
+ 
 
   const styles = StyleSheet.create({
     container: {
@@ -52,7 +55,24 @@ export default function LoginingIn({ navigation }) {
       alignItems: "center",
       marginTop: 20,
     },
+    textColor: {
+      color: "#fdfffc",
+    },
+    button: {
+      alignItems: "center",
+      backgroundColor: "#011627",
+      padding: 10,
+      width: 175,
+      marginBottom: 15,
+    },
+    container1: {
+      flex: 1,
+      backgroundColor: "#fdfffc",
+      alignItems: "center",
+      justifyContent: "center",
+    },
   });
+  
 
   const Data = [
     { id: 1, text: "Add receipt 1" },
@@ -72,7 +92,7 @@ export default function LoginingIn({ navigation }) {
     setinputText(item.text);
     seteditItem(item.id);
   };
-
+  
   const renderItem = ({ item, index }) => {
     return (
       <TouchableOpacity style={styles.item} onPress={() => onPressItem(item)}>
@@ -98,9 +118,18 @@ export default function LoginingIn({ navigation }) {
     setisModelVisible(false);
   };
 
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList data={data} keyExtractor={(item) => item.id.toString()} renderItem={renderItem} extraData={isRender} />
+      
+<View style={styles.container1}>
+ <TouchableOpacity style={styles.button} onPress={() => pressHandlerUserProfile()}>
+   <Text style={styles.textColor}>
+    User Profile
+   </Text>
+ </TouchableOpacity>
+</View>
       <Modal animationType="fade" visible={isModalVisible} onRequestClose={() => setisModelVisible(false)}>
         <View style={styles.modalView}>
           <Text style={styles.text}>Change Text: </Text>
@@ -115,6 +144,9 @@ export default function LoginingIn({ navigation }) {
           <TouchableOpacity onPress={() => onPressSaveEdit()} style={styles.touchableSave}>
             <Text style={styles.text}>Save</Text>
           </TouchableOpacity>
+          
+  
+  
         </View>
       </Modal>
     </SafeAreaView>

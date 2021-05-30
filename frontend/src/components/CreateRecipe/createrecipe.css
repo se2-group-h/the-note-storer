@@ -1,106 +1,20 @@
-
-.form-containers {
-    margin: 50px 50px 0 25%;
-    width: 800px;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-    position: relative;
-    border-radius: 10px;
-    height: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
+.createform {
+  width: 100%;
+  max-width:700px;
+  padding: 15px;
+  margin:auto;
+  height: 100%;
   
- 
-  .form-content-lefts {
-    border-radius: 0 10 10 0;
-    position: relative;
-  }
-  
-
-  .form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #2f250c;
-  }
-
-  .form h3 {
-    font-size: 2rem;
-    text-align: center;
-    width: 80%;
-    margin-bottom: 1rem;
-    color: beige;
-    background: #2f250c;
-    font-family: 'Roboto', sans-serif;
-  }
-  /*#05386B     */
-  .form-inputs {
-    margin-bottom: 0.5rem;
-    width: 80%;
-    background: #2f250c;
-  }
-  
-  input[type=text] {
-      background:white;
-      font-family: monospace;
-  }
-
-  input[type=password] {
-    background:white;
-    font-family: monospace;
 }
 
+.contain {
+  background-image: url(../../images/cookingicons.jpg);
+  width: 100%;
+  height: 100%;
   
-  .form-label {
-    display: inline-block;
-    font-size: 1rem;
-    margin-bottom: 6px;
-    color: beige;
-    background: #2f250c;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .form-input {
-    display: block;
-    padding-left: 10px;
-    outline: none;
-    border-radius: 0px;
-    height: 40px;
-    width: 100%;
-    border: none;
-  }
-  
-  .form-input::placeholder {
-    color: #595959;
-    font-size: 12px;
-  }
-  
-  .form-input-btn {
-    width: 60%;
-    height: 50px;
-    margin-top: 20px;
-    margin-left: 20%;
-    border-radius:10px;
-    background:#ecbc40;
-    outline: none;
-    border: none;
-    color: black;
-    font-size: 1rem;
-    align-items: center;
-  }
-  
-  .form-input-btn:hover {
-    cursor: pointer;
-    background:#8d7026;
-    transition: all 0.4s ease-out;
-  }
-  
-  
+}
+
+.labs {
+  color: white;
+  background-color: black;
+}

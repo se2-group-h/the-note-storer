@@ -1,12 +1,13 @@
 import React from 'react';
 //import validateregister from '../../Validate/validateregister';
 import './createrecipe.css';
+import { Form, Button } from "react-bootstrap";
 
 
 class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { name: '' , description: '' , tag: '' };
+        this.state = { name: '' , description: '' , tag: '' , rating: '' };
       }
     
       handleChange = (event) => {
@@ -14,9 +15,8 @@ class RecipeForm extends React.Component {
       }
     
       handleSubmit = (event) => {
-        
     
-        fetch('http://trn-staging-back.us-east-2.elasticbeanstalk.com/api/signup', {
+        fetch('http://se2-h-backend.herokuapp.com/api/recipes', {
             method: 'POST',
             // We convert the React state to JSON and send it as the POST body
             headers: {
@@ -32,49 +32,41 @@ class RecipeForm extends React.Component {
     }
     render() {
     return (
-        <div className="form-containers">
-         <div className="form-content-lefts">
-                <form className="form" onSubmit={this.handleSubmit}>
-                    <h2>Create your own recipe and share it with the world:</h2>
-                    <div className="form-inputs">
-                        <label className='form-label'>Recipe Name:</label>
-                        <input
-                            className='form-input'
-                            type='text'
-                            id='name'
-                            placeholder='Recipe name'
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                            name="name"
-                        />
-                       
-                        <label className='form-label'>Description:</label>
-                        <input
-                            className='form-input'
-                            type='text'
-                            id='description'
-                            placeholder='Describe the steps/ingredients usage'
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                            name="description"
-                        />
-                        <label className='form-label'>Tag:</label>
-                        <input
-                            className='form-input'
-                            type='text'
-                            id='tag'
-                            placeholder='#'
-                            value={this.state.value}
-                            onChange={this.handleChange}
-                            name="tag"
-                        />
-                        <button type="submit" className='form-input-btn' title="createbutn">
-                            Create
-                        </button>
-                    </div>
-                </form>
-        </div>
-     </div>
+      <div className="contain">
+      <Form className="createform" onSubmit={this.handleSubmit}>
+      <Form.Group controlId="exampleForm.ControlInput1">
+        <Form.Label className="labs"><strong>Recipe Name:</strong></Form.Label>
+        <Form.Control type="textarea" placeholder="Ex: Chicken Curry" name="name" value={this.state.value} onChange={this.handleChange}/>
+      </Form.Group>
+      <Form.Group controlId="exampleForm.ControlSelect1">
+        <Form.Label className="labs"><strong>Tags:</strong></Form.Label>
+        <Form.Control as="select" multiple name="tag"  value={this.state.value} onChange={this.handleChange}>
+          <option>#Vegetarian</option>
+          <option>#Protein</option>
+          <option>#Fried</option>
+          <option>#Sauce</option>
+          <option>#Meat</option>
+        </Form.Control>
+      </Form.Group>
+      <Form.Group controlId="exampleForm.ControlSelect2">
+        <Form.Label className="labs"><strong>Ratings 1(lowest) - 5(highest):</strong></Form.Label>
+        <Form.Control as="select" multiple name="rating"  value={this.state.value} onChange={this.handleChange}>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </Form.Control>
+      </Form.Group>
+      <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Label className="labs"><strong>Description:</strong></Form.Label>
+        <Form.Control as="textarea" rows={12} name="description"  value={this.state.value} onChange={this.handleChange}/>
+      </Form.Group>
+      <Button className="btn-lg btn-success btn-block" type="submit">
+      Create
+      </Button>
+    </Form>
+    </div>
     );
     }
 }

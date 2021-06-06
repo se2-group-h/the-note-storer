@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Text, TouchableOpacity, View, TextInput, Alert } from "react-native";
 import { styles } from "../styles/styles";
+import { BASEURL, LOGIN } from "../url/url";
 
-export default function LoginingIn({ setIsLoggedIn, setUsername, setPassword, username, password, userInfo }) {
-  const [invalidCredentials, setInvalidCredentials] = useState(false);
-
+export default function LoginingIn({
+  setIsLoggedIn,
+  setUsername,
+  setPassword,
+  username,
+  password,
+  userInfo,
+  setCreateAccountPressed,
+}) {
   const pressHandlerRegister = () => {
-    //  navigation.navigate("CreateAccount");
+    setCreateAccountPressed(true);
   };
 
-  const createAlert = () =>
-    Alert.alert("Invalid Login or Password", "Please try again", [
-      { text: "OK", onPress: () => console.log("OK Pressed") },
-    ]);
+  const createAlert = () => Alert.alert("Invalid Login or Password", "Please try again", [{ text: "OK" }]);
 
   const pressHandlerLogIn = () => {
-    fetch("https://se2-h-backend.herokuapp.com/api/login", {
+    fetch(BASEURL + LOGIN, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -29,8 +33,7 @@ export default function LoginingIn({ setIsLoggedIn, setUsername, setPassword, us
       .then((e) => (userInfo = e))
       .then(() => setIsLoggedIn(true))
       .catch((e) => {
-        console.log(e.status);
-        setInvalidCredentials(true);
+        console.log(e);
         createAlert();
       });
   };

@@ -4,6 +4,7 @@ import com.notes.backend.entities.User;
 import com.notes.backend.exceptions.NuSuchUserException;
 import com.notes.backend.services.UserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(tags = "Login")
+@Api(tags = "Users")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/users")
@@ -26,6 +27,7 @@ public class UsersController {
 	private final UserService userService;
 
 	@GetMapping
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
 	public ResponseEntity<List<User>> search(@RequestParam(required = false) String name,
 											 @RequestParam(required = false) String surname,
 											 @RequestParam(required = false) String email) {
@@ -33,6 +35,7 @@ public class UsersController {
 	}
 
 	@GetMapping("/{id}")
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
 	public ResponseEntity<?> getUserInfo(@PathVariable Integer id) {
 		try {
 			User userById = userService.getById(id);
@@ -43,6 +46,7 @@ public class UsersController {
 	}
 
 	@PutMapping("/{id}")
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
 	public ResponseEntity<?> updateInfo(@PathVariable Integer id, @RequestBody User user) {
 		try {
 			userService.updateUser(id, user);
@@ -53,6 +57,7 @@ public class UsersController {
 	}
 
 	@DeleteMapping("/{id}")
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
 	public ResponseEntity<?> delete(@PathVariable Integer id) {
 		userService.deleteUser(id);
 		return new ResponseEntity<>(HttpStatus.OK);

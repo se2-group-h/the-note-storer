@@ -6,6 +6,7 @@ import com.notes.backend.exceptions.ExistingRecipeException;
 import com.notes.backend.exceptions.NoSuchRecipeException;
 import com.notes.backend.services.RecipesService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,12 +29,14 @@ public class RecipeController {
     private RecipesService recipesService;
 
     @GetMapping
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
     public ResponseEntity<List<Recipe>> getAllRecipes() {
         List<Recipe> allRecipes = recipesService.getAllRecipes();
         return new ResponseEntity<>(allRecipes, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
     public ResponseEntity<?> getRecipeInfo(@PathVariable(name = "id") Integer recipeId) {
         try {
             Recipe recipeById = recipesService.getById(recipeId);
@@ -44,12 +47,14 @@ public class RecipeController {
     }
 
 	@GetMapping("/user/{userId}")
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
 	public ResponseEntity<List<Recipe>> getUserRecipes(@PathVariable(name = "userId") User user) {
 		List<Recipe> savedRecipes = recipesService.getUserRecipes(user);
 		return new ResponseEntity<>(savedRecipes, HttpStatus.OK);
 	}
 
     @PostMapping
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
     public ResponseEntity<?> saveRecipe(@RequestBody Recipe recipe) {
         try {
             Recipe savedRecipe = recipesService.saveRecipe(recipe);
@@ -60,6 +65,7 @@ public class RecipeController {
     }
 
     @PutMapping("/{id}")
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
     public ResponseEntity<?> updateRecipe(@PathVariable(name = "id") Integer recipeId, @RequestBody Recipe recipe) {
         try {
             recipesService.getById(recipeId);
@@ -72,6 +78,7 @@ public class RecipeController {
     }
 
     @DeleteMapping("/{id}")
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
     public ResponseEntity<?> deleteRecipe(@PathVariable(name = "id") Integer recipeId) {
         recipesService.deleteRecipeById(recipeId);
         return new ResponseEntity<>(HttpStatus.OK);

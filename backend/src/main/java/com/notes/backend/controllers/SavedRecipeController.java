@@ -3,6 +3,7 @@ package com.notes.backend.controllers;
 import com.notes.backend.entities.RecipeLink;
 import com.notes.backend.services.UserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ public class SavedRecipeController {
     private UserService userService;
 
     @PostMapping
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
     public ResponseEntity<?> saveRecipeLink(@RequestBody RecipeLink link) {
         try {
             userService.saveUserRecipe(link);
@@ -27,6 +29,7 @@ public class SavedRecipeController {
     }
 
     @DeleteMapping
+	@ApiImplicitParam(name = "Authorization", paramType = "header", example = "Bearer $JWT", dataTypeClass = String.class)
     public ResponseEntity<?> deleteLink(@RequestParam Integer userId, @RequestParam Integer recipeId) {
         try {
             userService.deleteUserRecipe(userId, recipeId);

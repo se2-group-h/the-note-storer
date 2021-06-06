@@ -11,4 +11,8 @@ public class RecipeLink {
 
     private Integer userId;
     private Integer recipeId;
+
+    public RecipeLink(Integer userId, Integer recipeId) {
+
+    }
 }

@@ -3,7 +3,7 @@ import {useState} from 'react';
 import registerAsync from "../../services/register.service";
 import './registerform.css';
 import noteadderimg from '../../images/cheflogo.png';
-import env from '../../appsettings.json';
+//import env from '../../appsettings.json';
 
 
 class RegisterForm extends React.Component {
@@ -21,7 +21,7 @@ class RegisterForm extends React.Component {
         
         event.preventDefault();
 
-        fetch(`${env.url}/api/signup`, {
+        fetch('se2-h-backend.herokuapp.com/api/signup', {
             method: 'POST',
             // We convert the React state to JSON and send it as the POST body
             headers: {

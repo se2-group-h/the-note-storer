@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "Registration")
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/signup")
+@RequestMapping("/api/users")
 public class RegistrationController {
 
     private final RegistrationService registrationService;

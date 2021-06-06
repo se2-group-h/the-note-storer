@@ -1,0 +1,1 @@
+java -Dserver.port=$PORT -jar -Dspring.profiles.active=dev backend-0.25b.jar

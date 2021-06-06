@@ -32,7 +32,7 @@ public class E2ETests {
         MockMvc mvc = MockMvcBuilders.webAppContextSetup(context).build();
         User correctUser = new User(0,"TestUser1", "qwerty123456", "Test", "User", "testuser@gmail.com", false, false, List.of());
         mvc.perform(MockMvcRequestBuilders
-                .post("/api/signup")
+                .post("/api/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(correctUser)))
                 .andExpect(status().is2xxSuccessful());

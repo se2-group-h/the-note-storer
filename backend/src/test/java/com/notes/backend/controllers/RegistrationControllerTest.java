@@ -31,7 +31,7 @@ class RegistrationControllerTest {
         MockMvc mvc = MockMvcBuilders.webAppContextSetup(context).build();
         User correctUser = new User(0,"Elephant007", "qwerty", "Kiryl", "Volkau", "kiryl@gmail.com", false, false, List.of());
         mvc.perform(MockMvcRequestBuilders
-                .post("/api/signup")
+                .post("/api/users")
                 .content(asJsonString(correctUser))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))

@@ -24,7 +24,7 @@ class RecipesServiceTest {
     @Autowired
     private RecipesService recipesService;
 
-    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f, List.of());
+    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f, List.of(), List.of());
     private User testUser = new User(0, "dino", "123456","Andrew","Whatever","some@email.com",true, false, List.of());
 
     @Test

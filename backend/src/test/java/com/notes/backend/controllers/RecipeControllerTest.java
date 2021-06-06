@@ -33,7 +33,7 @@ class RecipeControllerTest {
     @Autowired
     private WebApplicationContext context;
 
-    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f, List.of());
+    private Recipe someRecipe = new Recipe(0, 1, "Some Meal", "Some description", "meal", 2.2f, List.of(), List.of());
 
     @Test
     void getAllRecipes() throws Exception {
@@ -75,11 +75,12 @@ class RecipeControllerTest {
 
 	@Test
 	void getAllUserRecipesCheckContent() throws Exception {
-		List<Recipe> recipes = List.of(new Recipe(2, 2, "Steak", "Kill one cow", "fast", 5.0f, List.of()));
+		List<Recipe> recipes = List.of(new Recipe(1, 1, "Delicious homemade cookies", "Directions. Preheat oven to 350 degrees F (175 degrees C)..."
+				, "homemade", 4.4f, List.of(), List.of()));
 		MockMvc mvc = MockMvcBuilders
 				.webAppContextSetup(context)
 				.build();
-		mvc.perform(get("/api/recipes/user/1"))
+		mvc.perform(get("/api/recipes/user/2"))
 				.andExpect(content().json(asJsonString(recipes)));
 	}
 
@@ -134,7 +135,7 @@ class RecipeControllerTest {
 
     @Test
 	@AfterAll
-    void deleteRecipe() throws Exception {
+    static void deleteRecipe(@Autowired WebApplicationContext context) throws Exception {
         MockMvc mvc = MockMvcBuilders
                 .webAppContextSetup(context)
                 .build();

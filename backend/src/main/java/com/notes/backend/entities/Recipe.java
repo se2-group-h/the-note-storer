@@ -1,14 +1,18 @@
 package com.notes.backend.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Data
@@ -40,6 +44,9 @@ public class Recipe {
     @JsonIgnore
     @OneToMany(mappedBy = "recipe")
     private List<UserRecipe> usedUsers;
+
+	@ManyToMany
+    private List<Ingredient> ingredients;
 
     @Override
     public String toString() {

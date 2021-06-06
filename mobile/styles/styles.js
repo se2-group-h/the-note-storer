@@ -14,6 +14,9 @@ export const styles = StyleSheet.create({
     width: 175,
     marginBottom: 15,
   },
+  invalidButton: {
+    backgroundColor: "red",
+  },
   textColor: {
     color: "#fdfffc",
   },
@@ -56,5 +59,6 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#cecece",
     padding: 30,
-    marginBottom: 20,},
+    marginBottom: 20,
+  },
 });

@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import DrawerContent from "./screens/DrawerContent";
-
-import MainScreen from "./screens/HomeScreen";
-import EditUsersProfile from "./screens/EditUsersProfile";
-import ReceiptsScreen from "./screens/ReceiptsScreen";
-import LoginScreen from "./screens/LoginScreen";
-import CreateAccount from "./screens/CreateAccount";
+import SideMenu from "./app/components/sideMenu/SideMenu";
+import EditUsersProfile from "./app/components/account/editUserAccount/EditUserAccount";
+import ReceiptList from "./app/components/receiptList/ReceiptList";
+import CreateAccount from "./app/components/account/createAccount/CreateAccount";
+import Temporary from "./app/components/temporary/Temporary";
+import Login from "./app/components/login/Login";
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +23,7 @@ export default function App() {
         <NavigationContainer>
           <Drawer.Navigator
             drawerContent={(props) => (
-              <DrawerContent
+              <SideMenu
                 {...props}
                 setIsLoggedIn={setIsLoggedIn}
                 userInfo={userInfo}
@@ -35,15 +33,15 @@ export default function App() {
               />
             )}
           >
-            <Drawer.Screen name="Home" component={MainScreen} />
-            <Drawer.Screen name="Receipts" component={ReceiptsScreen} />
+            <Drawer.Screen name="Temporary" component={Temporary} />
+            <Drawer.Screen name="Receipts" component={ReceiptList} />
             <Drawer.Screen name="Edit Profile" component={EditUsersProfile} />
           </Drawer.Navigator>
         </NavigationContainer>
       );
     } else if (isLoggedIn == false && createAccountPressed == false) {
       return (
-        <LoginScreen
+        <Login
           setIsLoggedIn={setIsLoggedIn}
           setUsername={setUsername}
           setPassword={setPassword}

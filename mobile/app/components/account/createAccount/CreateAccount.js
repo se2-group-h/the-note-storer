@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, TouchableOpacity, View, TextInput, Alert } from "react-native";
-import { styles } from "../styles/styles";
-import { BASEURL, CREATEACCOUNT } from "../url/url";
+import { styles } from "../../../globals/styles/styles";
+import { BASE_URL, CREATE_ACCOUNT } from "../../../globals/constants/url";
 
 export default function CreateAccount({ setCreateAccountPressed }) {
   const [newUser, setNewUser] = useState({
@@ -21,7 +21,7 @@ export default function CreateAccount({ setCreateAccountPressed }) {
   const pressHandlerCancel = () => setCreateAccountPressed(false);
 
   const pressHandlerCreateAccount = () => {
-    fetch(BASEURL + CREATEACCOUNT, {
+    fetch(BASE_URL + CREATE_ACCOUNT, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",

@@ -1,8 +1,9 @@
 import { Text, TouchableOpacity, View, TextInput } from "react-native";
 import { StyleSheet } from "react-native";
 import React from "react";
+import { styles } from "./styles";
 
-export default function UserSettingsView({ navigation }) {
+export default function EditUserAccount() {
   return (
     <View style={styles.container}>
       <TextInput placeholder="Name" style={styles.textInput} />
@@ -15,20 +16,3 @@ export default function UserSettingsView({ navigation }) {
     </View>
   );
 }
-
-export const styles = StyleSheet.create({
-  textInput: {
-    height: 40,
-    borderColor: "grey",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    marginBottom: 15,
-    width: 175,
-    textAlign: "center",
-  },
-  container: {
-    flex: 1,
-    backgroundColor: "#fdfffc",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

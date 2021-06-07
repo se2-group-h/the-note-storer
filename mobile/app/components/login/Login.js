@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Text, TouchableOpacity, View, TextInput, Alert } from "react-native";
-import { styles } from "../styles/styles";
-import { BASEURL, LOGIN } from "../url/url";
+import { styles } from "../../globals/styles/styles";
+import { BASE_URL, LOGIN } from "../../globals/constants/url";
 
-export default function LoginingIn({
+export default function Login({
   setIsLoggedIn,
   setUsername,
   setPassword,
@@ -19,7 +19,7 @@ export default function LoginingIn({
   const createAlert = () => Alert.alert("Invalid Login or Password", "Please try again", [{ text: "OK" }]);
 
   const pressHandlerLogIn = () => {
-    fetch(BASEURL + LOGIN, {
+    fetch(BASE_URL + LOGIN, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",

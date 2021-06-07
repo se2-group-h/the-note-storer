@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fdfffc",
@@ -62,3 +62,5 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
+
+export { styles };

@@ -49,9 +49,9 @@ export default function SideMenu(props) {
             />
             <DrawerItem
               icon={({ color, size }) => <Icon name="receipt" color={color} size={size} />}
-              label="Receips"
+              label="Receipts"
               onPress={() => {
-                props.navigation.navigate("Receips", { userInfo: props.userInfo.user });
+                props.navigation.navigate("Receipts", { userInfo: props.userInfo });
               }}
             />
             <DrawerItem

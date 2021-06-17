@@ -15,6 +15,31 @@
 }
 
 .labs {
-  color: white;
+  color: gold;
+  background-color: black;
+}
+
+.containermyrecipe {
+  width: 100%;
+  max-width:1200px;
+  padding: 40px;
+  margin:auto;
+  height: 100%;
+  
+}
+
+#trashbut {
+  color: red;
+  float: right;
+}
+
+#updatebut {
+  color: black;
+  float:right;
+}
+
+.labelz {
+  color: White;
+  font-size: 30px;
   background-color: black;
 }

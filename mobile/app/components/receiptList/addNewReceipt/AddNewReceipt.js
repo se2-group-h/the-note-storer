@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Text, TouchableOpacity, View, TextInput, Alert } from "react-native";
 import { styles } from "../../../globals/styles/styles";
 import { BASE_URL, CREATE_ACCOUNT } from "../../../globals/constants/url";
+import { StyleSheet } from "react-native";
 
 export default function AddNewReceipt({
   setIsAddReceiptPressed,
@@ -24,6 +25,7 @@ export default function AddNewReceipt({
         }
       : receipts.find((element) => element.recipeId == receiptIdToBeEdited)
   );
+  const [descriptionHeight, setDescriptionHeight] = useState(40);
 
   const createAlert = (message) => Alert.alert(message, "Please try again", [{ text: "OK" }]);
 
@@ -82,12 +84,7 @@ export default function AddNewReceipt({
         value={newReceipt.name}
         onChangeText={(val) => setNewReceipt({ ...newReceipt, name: val })}
       />
-      <TextInput
-        placeholder="Description"
-        style={styles.textInput}
-        value={newReceipt.description}
-        onChangeText={(val) => setNewReceipt({ ...newReceipt, description: val })}
-      />
+
       <TextInput
         placeholder="Tag"
         style={styles.textInput}
@@ -99,6 +96,23 @@ export default function AddNewReceipt({
         style={styles.textInput}
         value={newReceipt.rating.toString()}
         onChangeText={(val) => setNewReceipt({ ...newReceipt, rating: val })}
+      />
+      <TextInput
+        placeholder="Description"
+        style={{
+          height: Math.max(40, descriptionHeight),
+          borderColor: "grey",
+          borderBottomWidth: StyleSheet.hairlineWidth,
+          marginBottom: 15,
+          width: 175,
+          textAlign: "center",
+        }}
+        onContentSizeChange={(event) => {
+          setDescriptionHeight(event.nativeEvent.contentSize.height);
+        }}
+        value={newReceipt.description}
+        multiline={true}
+        onChangeText={(val) => setNewReceipt({ ...newReceipt, description: val })}
       />
       <TextInput placeholder="Ingredients" style={styles.textInput} editable={false} value="disabled" />
       {receiptIdToBeEdited == -1 ? (

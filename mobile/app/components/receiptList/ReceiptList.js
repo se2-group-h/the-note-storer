@@ -5,45 +5,8 @@ import Swipeable from "react-native-gesture-handler/Swipeable";
 import AddNewReceiptScreen from "./addNewReceipt/AddNewReceipt";
 import { styles } from "./styles";
 
-export default function ReceiptList({ userInfo }) {
-  const [receipts, setReceipts] = useState([
-    {
-      recipeId: 1,
-      creatorId: 1,
-      name: "Delicious homemade cookies",
-      description: "Directions. Preheat oven to 350 degrees F (175 degrees C)...",
-      tag: "homemade",
-      rating: 4.4,
-      ingredients: [
-        {
-          ingredientId: 1,
-          name: "Cheese",
-        },
-        {
-          ingredientId: 2,
-          name: "Cucumber",
-        },
-      ],
-    },
-    {
-      recipeId: 2,
-      creatorId: 2,
-      name: "Steak",
-      description: "Kill one cow",
-      tag: "fast",
-      rating: 5,
-      ingredients: [
-        {
-          ingredientId: 1,
-          name: "Cheese",
-        },
-        {
-          ingredientId: 2,
-          name: "Cucumber",
-        },
-      ],
-    },
-  ]);
+export default function ReceiptList({ route }) {
+  const [receipts, setReceipts] = useState(route.params.userInfo.recipeList);
   const [receiptIdToBeEdited, setReceiptIdToBeEdited] = useState(-1);
 
   const [isAddReceiptPressed, setIsAddReceiptPressed] = useState(false);
@@ -110,7 +73,7 @@ export default function ReceiptList({ userInfo }) {
       setIsAddReceiptPressed={setIsAddReceiptPressed}
       setReceipts={setReceipts}
       receipts={receipts}
-      loggedUserId={userInfo.Id}
+      loggedUserId={route.params.userInfo.userId}
       receiptIdToBeEdited={receiptIdToBeEdited}
       setReceiptIdToBeEdited={setReceiptIdToBeEdited}
     />

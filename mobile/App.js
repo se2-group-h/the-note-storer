@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import SideMenu from "./app/components/sideMenu/SideMenu";
 import EditUsersProfile from "./app/components/account/editUserAccount/EditUserAccount";
-import ReceiptList from "./app/components/receiptList/ReceiptList";
+import ReceipList from "./app/components/receiptList/ReceiptList";
 import CreateAccount from "./app/components/account/createAccount/CreateAccount";
 import Temporary from "./app/components/temporary/Temporary";
 import Login from "./app/components/login/Login";
@@ -15,7 +15,7 @@ export default function App() {
   const [createAccountPressed, setCreateAccountPressed] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  let userInfo = {};
+  const [userInfo, setUserInfo] = useState([]);
 
   const decideWhatToReturn = () => {
     if (isLoggedIn == true && createAccountPressed == false) {
@@ -34,7 +34,7 @@ export default function App() {
             )}
           >
             <Drawer.Screen name="Temporary" component={Temporary} />
-            <Drawer.Screen name="Receipts" component={ReceiptList} />
+            <Drawer.Screen name="Receips" component={ReceipList} />
             <Drawer.Screen name="Edit Profile" component={EditUsersProfile} />
           </Drawer.Navigator>
         </NavigationContainer>
@@ -47,7 +47,7 @@ export default function App() {
           setPassword={setPassword}
           username={username}
           password={password}
-          userInfo={userInfo}
+          setUserInfo={setUserInfo}
           setCreateAccountPressed={setCreateAccountPressed}
         />
       );

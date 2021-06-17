@@ -9,7 +9,7 @@ export default function Login({
   setPassword,
   username,
   password,
-  userInfo,
+  setUserInfo,
   setCreateAccountPressed,
 }) {
   const pressHandlerRegister = () => {
@@ -30,7 +30,7 @@ export default function Login({
       }),
     })
       .then((a) => a.json())
-      .then((e) => (userInfo = e))
+      .then((e) => setUserInfo(e))
       .then(() => setIsLoggedIn(true))
       .catch((e) => {
         console.log(e);

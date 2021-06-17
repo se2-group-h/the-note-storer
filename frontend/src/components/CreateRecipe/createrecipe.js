@@ -2,12 +2,13 @@ import React from 'react';
 //import validateregister from '../../Validate/validateregister';
 import './createrecipe.css';
 import { Form, Button } from "react-bootstrap";
-
+//import axios from 'axios';
+import GetRecipedetails from './getRecipedetails';
 
 class RecipeForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { name: '' , description: '' , tag: '' , rating: '' };
+        this.state = { name: '' , description: '' , tag: '' , rating: '' , ingredients: '' };
       }
     
       handleChange = (event) => {
@@ -16,7 +17,7 @@ class RecipeForm extends React.Component {
     
       handleSubmit = (event) => {
     
-        fetch('http://se2-h-backend.herokuapp.com/api/recipes', {
+        fetch('https://se2-h-backend.herokuapp.com/api/recipes', {
             method: 'POST',
             // We convert the React state to JSON and send it as the POST body
             headers: {
@@ -30,13 +31,20 @@ class RecipeForm extends React.Component {
     
         event.preventDefault();
     }
+    
+   
     render() {
     return (
+      <div>
       <div className="contain">
       <Form className="createform" onSubmit={this.handleSubmit}>
       <Form.Group controlId="exampleForm.ControlInput1">
         <Form.Label className="labs"><strong>Recipe Name:</strong></Form.Label>
         <Form.Control type="textarea" placeholder="Ex: Chicken Curry" name="name" value={this.state.value} onChange={this.handleChange}/>
+      </Form.Group>
+      <Form.Group controlId="exampleForm.ControlInput1">
+        <Form.Label className="labs"><strong>Ingredients Name:</strong></Form.Label>
+        <Form.Control type="textarea" placeholder="Ex: Potato" name="ingredients" value={this.state.value} onChange={this.handleChange}/>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect1">
         <Form.Label className="labs"><strong>Tags:</strong></Form.Label>
@@ -49,7 +57,7 @@ class RecipeForm extends React.Component {
         </Form.Control>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect2">
-        <Form.Label className="labs"><strong>Ratings 1(lowest) - 5(highest):</strong></Form.Label>
+        <Form.Label className="labs"><strong>Ratings 1(lowest) - 5(highest):</strong><i className="fa fa-star" aria-hidden="true"></i></Form.Label>
         <Form.Control as="select" multiple name="rating"  value={this.state.value} onChange={this.handleChange}>
           <option>1</option>
           <option>2</option>
@@ -66,6 +74,8 @@ class RecipeForm extends React.Component {
       Create
       </Button>
     </Form>
+    <GetRecipedetails />
+    </div>
     </div>
     );
     }

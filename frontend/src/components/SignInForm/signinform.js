@@ -8,11 +8,14 @@ class SignInForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {password: '', username: ''};
+
     }
 
     handleChange = (event) => {
         this.setState({[event.target.name]: event.target.value});
+        
     }
+
 
     handleSubmit = (event) => {
 
@@ -36,6 +39,16 @@ class SignInForm extends React.Component {
                 }
                 if (res.status === 200) {
                     alert('Logged in successfully!')
+                    const token = JSON.parse(res.data).token
+                    const user_id = JSON.parse(res.data).userId
+                    const firstName = JSON.parse(res.data).firstName
+                    //const recipeList = [JSON.parse(res.data).recipeList]
+                    const recipeList = JSON.parse(res.data).recipeList
+                    console.log(JSON.parse(res.data).recipeList)
+                    localStorage.setItem('token',token)
+                    localStorage.setItem('user_id',user_id)
+                    localStorage.setItem('firstName', firstName)
+                    localStorage.setItem('recipeList', recipeList)
                 }
             })).catch(e => alert(e))
 

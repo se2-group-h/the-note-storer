@@ -15,7 +15,7 @@ export default function App() {
   const [createAccountPressed, setCreateAccountPressed] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  let userInfo = {};
+  const [userInfo, setUserInfo] = useState([]);
 
   const decideWhatToReturn = () => {
     if (isLoggedIn == true && createAccountPressed == false) {
@@ -47,7 +47,7 @@ export default function App() {
           setPassword={setPassword}
           username={username}
           password={password}
-          userInfo={userInfo}
+          setUserInfo={setUserInfo}
           setCreateAccountPressed={setCreateAccountPressed}
         />
       );
